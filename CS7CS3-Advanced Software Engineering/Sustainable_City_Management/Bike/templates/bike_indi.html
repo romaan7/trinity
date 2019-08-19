@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+    </style>
+  </head>
+  <body>
+  <div id='container'></div>  
+  
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    {% load static %}
+    <script src="{% static 'Bike/js/jeezy.min.js' %}"></script>
+    <script src="https://unpkg.com/d3-marcon/build/d3-marcon.min.js"></script>
+    <script>
+
+    var bike_data = []
+    var top_busy_bike_Stands = []
+    var top_free_bike_Stands = []
+
+    d3.json("/Bike/bike_data", function(error, bdata) {
+    for (i in bdata) {
+        var obj = {};
+        obj.name = bdata[i].name;
+        obj.available_bike_stands = bdata[i].available_bike_stands;
+        obj.available_bikes = bdata[i].available_bikes;
+        obj.bike_stands = bdata[i].bike_stands;
+        obj.last_update = bdata[i].last_update;
+        obj.status = bdata[i].status;
+        bike_data.push(obj);
+          }
+      
+      var top5_avaliable_bikes_1 = bike_data.map(function(val) {
+      var s = {};
+      s.name = val.name
+      s.available_bikes = val.available_bikes;
+      return s;
+        });
+      var top5_avaliable_bikes = top5_avaliable_bikes_1.sort(function(a, b) {
+    return parseFloat(a.available_bikes) - parseFloat(b.available_bikes);
+}).reverse().slice(0,5);
+      
+      /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+      ////////////////////////////////////////////////////////////////////////////////////////////////////
+      var top5_avaliable_stands_1 = bike_data.map(function(val) {
+      var s = {};
+      s.name = val.name
+      s.available_bike_stands = val.available_bike_stands;
+      return s;
+        });
+        
+      var top5_avaliable_stands = top5_avaliable_stands_1.sort(function(a, b) {
+        return parseFloat(a.available_bike_stands) - parseFloat(b.available_bike_stands);
+    }).slice(0,5);
+      
+      console.log(top5_avaliable_bikes)
+      console.log(top5_avaliable_stands)
+      
+
+      var p = d3.select("#top-free")
+          .selectAll("p")
+          .data(top5_avaliable_bikes)
+          .enter()
+          .append("p")
+          .text(function(value){ return value.name +" : "+ value.available_bikes });
+          
+      var b = d3.select("#top-busy")
+          .selectAll("p")
+          .data(top5_avaliable_stands)
+          .enter()
+          .append("p")
+          .text(function(value){ return value.name +" : "+ value.available_bike_stands });
+          
+        p.style({"font-size":"20px","font-family":"arial"});
+        });
+
+    </script>
+    
+   <div id="top-busy">These are the top busy bike stands today.</div>
+   <div id="top-free">These are the top free/avaliable bike stands today.</div>
+  </body>
+</html>

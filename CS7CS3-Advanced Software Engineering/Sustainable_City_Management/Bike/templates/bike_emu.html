@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+    text {
+    font-family: Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
+    body {
+      margin: 0;
+    }
+    .y .axis .domain {
+      display: none;
+    }
+    .bar:hover {
+    fill: orangered ;
+    }
+    .tooltip{
+      position      : absolute;
+      text-align    : center;
+      max-width     : 150px;
+      max-height    : 150px;
+      padding       : 8px;
+      border        : none;
+      border-radius : 8px;
+      margin-top    : -30px;
+      font          : 10px sans-serif;
+      background    : black;
+      color         : white;
+      pointer-events: none;
+  }
+    </style>
+  </head>
+  <body>
+  <div id='container'></div>  
+  
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    {% load static %}
+    <script src="{% static 'Bike/js/jeezy.min.js' %}"></script>
+    <script src="https://unpkg.com/d3-marcon/build/d3-marcon.min.js"></script>
+    <script>
+
+    var x_var = "name";
+    var bike_data = []
+    d3.json("/Bike/bike_data", function(error, bdata) {
+    for (i in bdata) {
+        var obj = {};
+        obj.name = bdata[i].name;
+        obj.available_bike_stands = bdata[i].available_bike_stands
+        obj.available_bikes = bdata[i].available_bikes
+        obj.bike_stands = bdata[i].bike_stands
+        obj.last_update = bdata[i].last_update
+        obj.status = bdata[i].status
+        bike_data.push(obj);
+        //names.push(bdata[i].name);
+          }
+        });
+        
+    var stands = ["available_bike_stands","available_bikes"]
+    var names = ["SMITHFIELD NORTH", "PARNELL SQUARE NORTH", "CLONMEL STREET", "AVONDALE ROAD", "MOUNT STREET LOWER", "CHRISTCHURCH PLACE", "GRANTHAM STREET", "PEARSE STREET", "YORK STREET EAST", "EXCISE WALK", "FITZWILLIAM SQUARE WEST", "PORTOBELLO ROAD", "ST. JAMES HOSPITAL (CENTRAL)", "PARNELL STREET", "FREDERICK STREET SOUTH", "FOWNES STREET UPPER", "CUSTOM HOUSE", "RATHDOWN ROAD", "NORTH CIRCULAR ROAD (O'CONNELL'S)", "HANOVER QUAY", "OLIVER BOND STREET", "COLLINS BARRACKS MUSEUM", "BROOKFIELD ROAD", "BENSON STREET", "EARLSFORT TERRACE", "GOLDEN LANE", "DEVERELL PLACE", "WILTON TERRACE (PARK)", "JOHN STREET WEST", "FENIAN STREET", "MERRION SQUARE SOUTH", "SOUTH DOCK ROAD", "CITY QUAY", "EXCHEQUER STREET", "THE POINT", "HATCH STREET", "LIME STREET", "CHARLEMONT PLACE", "KILMAINHAM GAOL", "HARDWICKE PLACE", "WOLFE TONE STREET", "FRANCIS STREET", "GREEK STREET", "GUILD STREET", "HERBERT PLACE", "HIGH STREET", "NORTH CIRCULAR ROAD", "WESTERN WAY", "TALBOT STREET", "NEWMAN HOUSE", "SIR PATRICK DUN'S", "NEW CENTRAL BANK", "GRANGEGORMAN LOWER (CENTRAL)", "KING STREET NORTH", "KILLARNEY STREET", "HERBERT STREET", "CUSTOM HOUSE QUAY", "MOLESWORTH STREET", "GEORGES QUAY", "KILMAINHAM LANE", "MOUNT BROWN", "MARKET STREET SOUTH", "KEVIN STREET", "ECCLES STREET EAST", "GRAND CANAL DOCK", "MERRION SQUARE EAST", "YORK STREET WEST", "ST. STEPHEN'S GREEN SOUTH", "DENMARK STREET GREAT", "ROYAL HOSPITAL", "HEUSTON STATION (CAR PARK)", "GRANGEGORMAN LOWER (NORTH)", "ST. STEPHEN'S GREEN EAST", "HEUSTON STATION (CENTRAL)", "TOWNSEND STREET", "GEORGES LANE", "PHIBSBOROUGH ROAD", "ECCLES STREET", "PORTOBELLO HARBOUR", "MATER HOSPITAL", "BLESSINGTON STREET", "JAMES STREET", "MOUNTJOY SQUARE EAST", "MERRION SQUARE WEST", "CONVENTION CENTRE", "HARDWICKE STREET", "PARKGATE STREET", "SMITHFIELD", "DAME STREET", "HEUSTON BRIDGE (SOUTH)", "CATHAL BRUGHA STREET", "SANDWITH STREET", "BUCKINGHAM STREET LOWER", "ROTHE ABBEY", "CHARLEVILLE ROAD", "PRINCES STREET / O'CONNELL STREET", "UPPER SHERRARD STREET", "FITZWILLIAM SQUARE EAST", "GRATTAN STREET","ST JAMES HOSPITAL (LUAS)","HARCOURT TERRACE","BOLTON STREET","STRAND STREET GREAT","JERVIS STREET","ORMOND QUAY UPPER","BARROW STREET","GRANGEGORMAN LOWER (SOUTH)","MOUNTJOY SQUARE WEST","WILTON TERRACE","EMMET ROAD","HEUSTON BRIDGE (NORTH)","LEINSTER STREET SOUTH","BLACKHALL PLACE"];
+        names.sort();
+    var setup = d3.marcon()
+        .top(20)
+        .bottom(250)
+        .left(10)
+        .right(10)
+        .width(window.innerWidth)
+        .height(window.innerHeight);
+
+    setup.render();
+
+    var width = setup.innerWidth(), height = setup.innerHeight(), svg = setup.svg();
+
+    var color = d3.scaleOrdinal(["#fc8d62","#66c2a5"])
+
+    var x = d3.scaleBand()
+        .rangeRound([0, width])
+        .domain(names)
+        .padding(.25);
+
+    var y = d3.scaleLinear()
+        .rangeRound([height, 0]);
+
+    var x_axis = d3.axisBottom(x);
+
+    var y_axis = d3.axisRight(y)
+      .tickSize(width)
+      .tickFormat(function(d, i, ticks){ return i == ticks.length - 1 ? d + " value" : d; });
+
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(x_axis)
+        .selectAll("text")
+    .attr("y", 0)
+    .attr("x", 9)
+    .attr("dy", ".15em")
+    .attr("transform", "rotate(90)")
+    .style("text-anchor", "start");
+
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(customYAxis);
+
+    var stack = d3.stack()
+        .keys(stands)
+        .order(d3.stackOrderNone)
+        .offset(d3.stackOffsetNone);
+        
+    redraw(updateDate());
+
+    d3.interval(function(){
+      redraw(updateDate());
+    }, 1000);
+
+    function redraw(data){
+       
+      // update the y scale to maximum of bike stands number
+      y.domain([0, d3.max(data.map(function(d){ return d.sum }))]);
+      
+      svg.select(".y")
+        .transition()
+        .call(customYAxis);
+
+      // each data column (a.k.a "key" or "series") needs to be iterated over
+      // the variable stands represents the unique keys of the stacks
+      stands.forEach(function(key, key_index){
+
+        var bar = svg.selectAll(".bar-" + key)
+            .data(stack(data)[key_index], function(d){ return d.data[x_var] + "-" + key; });
+
+        bar
+          .transition()
+            .attr("x", function(d){ return x(d.data[x_var]); })
+            .attr("y", function(d){ return y(d[1]); })
+            .attr("height", function(d){ return y(d[0]) - y(d[1]); });
+
+        bar.enter().append("rect")
+            .attr("class", function(d){ return "bar bar-" + key; })
+            .attr("x", function(d){ return x(d.data[x_var]); })
+            .attr("y", function(d){ return y(d[1]); })
+            .attr("height", function(d){ return y(d[0]) - y(d[1]); })
+            .attr("width", x.bandwidth())
+            .attr("fill", function(d){ return color(key); })
+        .on('mouseover', mouseover)
+        .on('mousemove', mousemove)
+        .on('mouseout', mouseout);
+        
+        
+    // tooltips
+    var div = d3.select('#container').append('div')
+        .attr('class', 'tooltip')
+        .style('display', 'none');
+    function mouseover(){
+        div.style('display', 'inline');
+    }
+    function mousemove(){
+        var d = d3.select(this).data()[0]
+        div
+            .html(d.data[x_var] +'<hr>'+ d.data.status +'<hr>'+  key +': '+ (d[1] - d[0]) +'<hr>'+ new Date(d.data.last_update))
+            .style('left', (d3.event.pageX - 34) + 'px')
+            .style('top', (d3.event.pageY - 12) + 'px');
+    }
+    function mouseout(){
+        div.style('display', 'none');
+    }
+
+      });
+
+    }
+
+    function updateDate(data){
+return names.map(function(d){
+        var obj = {};
+        obj.name = d;
+        var nums = [];
+        stands.forEach(function(e){
+          var num = jz.num.randBetween(1, 10);
+          obj[e] = num;
+          nums.push(num);
+        });
+        obj.sum = jz.arr.sum(nums);
+        return obj;
+      });
+    }
+
+    function customYAxis(g) {
+      g.call(y_axis);
+      g.selectAll(".tick:not(:first-of-type) line").attr("stroke", "#777").attr("stroke-dasharray", "2,2");
+      g.selectAll(".tick text").attr("x", 4).attr("dy", -4);
+    }
+
+    </script>
+  </body>
+</html>

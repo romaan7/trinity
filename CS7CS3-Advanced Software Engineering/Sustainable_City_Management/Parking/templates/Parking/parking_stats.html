@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+    </style>
+  </head>
+  <body>
+  <div id='container'></div>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    {% load static %}
+    <script src="https://unpkg.com/d3-marcon/build/d3-marcon.min.js"></script>
+    <script>
+
+    var parking_data = []
+    var top_busy_parking_stn = []
+    var top_free_parking_stn = []
+
+    d3.json("/Parking/parking_statsdata", function(error, parkdata) {
+    console.log(parkdata)
+    var obj = new Array();
+    var obj1 = new Array();
+    var obj2 = new Array();
+    for (i in parkdata) {
+        var obj = {};
+        var obj1 = {};
+        obj.name = parkdata[i].name;
+        obj.spaces = parkdata[i].spaces;
+        obj.area = parkdata[i].area;
+        parking_data.push(obj);
+        }
+
+      var top5_avaliable_parking_1 = parking_data.map(function(val) {
+      var s = {};
+      s.name = val.name
+      s.spaces = val.spaces;
+      return s;
+        });
+
+      var top5_avaliable_parking = top5_avaliable_parking_1.sort(function(a, b) {
+    return parseInt(a.spaces) - parseInt(b.spaces);
+}).reverse().slice(0,5);
+      console.log(top5_avaliable_parking)
+
+       var top5_busy_parking = top5_avaliable_parking_1.sort(function(a, b) {
+    return parseInt(a.spaces) - parseInt(b.spaces);
+}).slice(0,5);
+
+      <!--//console.log(top5_avaliable_parking)-->
+
+
+      var p = d3.select("#top-free")
+          .selectAll("p")
+          .data(top5_avaliable_parking)
+          .enter()
+          .append("p")
+          .text(function(value){ return value.name +" : "+ value.spaces });
+
+      var b = d3.select("#top-busy")
+          .selectAll("p")
+          .data(top5_busy_parking)
+          .enter()
+          .append("p")
+          .text(function(value){ return value.name +" : "+ value.spaces });
+        });
+
+    </script>
+
+   <div id="top-busy">Top 5 busy parking stations </div>
+   <div id="top-free">Top 5 free parking stations </div>
+  </body>
+</html>

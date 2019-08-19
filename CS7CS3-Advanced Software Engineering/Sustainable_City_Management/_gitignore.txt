@@ -1,0 +1,11 @@
+env
+*.DS_Store
+*.pyc
+__pycache__
+htmlcov
+*.vscode
+.idea/
+.vs/
+*.log
+config.ini
+*.csv

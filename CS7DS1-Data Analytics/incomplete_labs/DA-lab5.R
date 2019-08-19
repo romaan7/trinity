@@ -1,0 +1,17 @@
+rm(list=ls())
+setwd("/users/pgrad/shaikhr/Downloads")
+
+Data <- read.csv("HS.csv",header=TRUE,sep=",")
+
+Datastr(Data)
+attach(Data)
+head(Data)
+summary(Data)
+#install.packages("VIM")
+library(VIM)
+Impute1<-kNN(Data,variable="Genre",k=5)
+summary(Impute1)
+Impute2<-kNN(Data,variable=c("Audience..score..","Profitability"),k=6)
+summary(Impute2)
+Impute3<-kNN(Data,variable="Rotten.Tomatoes..",k=6)
+summary(Impute3)

@@ -1,0 +1,12 @@
+  john --format=crypt --wordlist=t.pot try.txt
+  
+  cudaHashcat64.exe -m 500 -a 0 shaikhr.hashes C:\Users\romaa\Downloads\Compressed\hashcat-4.2.1\wordlist -o shaikhr.broken
+  
+  cudaHashcat64.exe -m 500 -a 0 C:\Users\romaa\Desktop\as3-sample.hashes C:\Users\romaa\Desktop\as3-sample.dict -o C:\Users\romaa\Desktop\as3-sample.bro
+  
+  
+  
+  
+  ?x?x?x?x?x?x?x?x----< all a-zA-Z-0-9
+  ?z?z?z?z?z?z?z?z-----< All character
+  ?d?d?d?d?d?d?d?d------<digit

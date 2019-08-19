@@ -1,0 +1,21 @@
+Hello Everyone, 
+
+This visualization attempts to show the effects of the Syrian civil war on humanity and how different countries are helping Syrian people to rebuild their lives.
+
+First, let's look at the data. We have three types of data for our visualizations. First one is the data for Syrian migration to different countries, this data consists of Countries, continent, population and Refugee count from 2008 to 2014.
+
+Second dataset consists of the various socio-political events happened from 2011 to 2015 around Syria. These events are divided into 8 categories of classification like Protesters, Government, Foreign, Rebels, Al Qaeda, ISIS, Kurds and unknown.
+
+And the third data contains information about refugee camps in the neighboring top 5 countries to Syria. Information like country, city, province, location and the total number of refugees in them from 2012 to 2016.
+
+Now coming to visualization, You can view the visualization by visiting this URL. We wait for the data to load so that all the animations are smooth. 
+
+The first view shows the data from 2008 to 2014 of where the Syrian refugee people are seeking asylum. Each circle represents the country and each unique color represents the continent. The size of the circle represents the population of the country as shown in the legend. If we hover over the circle we can see the name of the country, the number of refugees and the population of the country.
+
+We can choose from the selector in the top left to filter the data. If we click on the "Above 1000" only the countries with more than 1000 refugees will be highlighted, giving us a better view of the refugee movement. If we select the "Continent" the view changes to show all the countries from one continent in one view.
+
+The second view gives us the major causes/actors of this civil war. This stacked bar chart shows all the violent events from 2011 to 2015. Each color in the stack represents the broad category who caused/was involved in the event. We can choose the data type from the dropdown to show the targeted groups due to the events. Also, another selector gives us a relative view. If we hover over each of the legend items we can see the count of the events besides it.
+
+The third and final visualization shows the refugee camp data around the top 5 neighbors of Syria. The area chart shows the number of refugees from 2012 to 2016. The map on the left shows the campsites in those countries. If we hover over the circles of campsites we can see the corresponding highlighted area chart on the right, along with the site name and number of refugees. The area chart view can be changed by selecting the buttons for "by country" or "by refugee camp"
+
+Thank you for listening.

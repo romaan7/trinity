@@ -1,0 +1,2 @@
+git+git://github.com/blockstack/secret-sharing.git@master#egg=secretsharing
+pycrypto

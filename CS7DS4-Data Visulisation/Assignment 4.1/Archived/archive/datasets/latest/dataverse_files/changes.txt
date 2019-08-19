@@ -1,0 +1,54 @@
+Changes to ICEWS Event Data
+============================================================
+
+o v25 (2018-11-19)
+  + Extended the data through 10/31/2018
+o v24 (2018-10-10)
+  + Extended the data through 9/30/2018
+o v23 (2018-09-24)
+  + No longer withholding last year's worth of events
+  + Extended data through 08/31/2018
+  + Recoded/replaced events from 7/1/2015 - 2/28/2017
+    - Minor changes related to slightly updated actor dictionaries
+o v21 (2018-02-22)
+  + Extended data through all of 2016
+  + Added data for Jan, Feb 2017
+o v20 (2017-10-09)
+  + Extended data through September 2016
+o v19 (2017-06-15)
+  + Extended data through May 2016
+o v18 (2017-04-03)
+  + Extended data through March 2016
+o v17 (2017-02-06)
+  + Data available for all of 2015.
+  + New file for 2016 events; contains January 2016.
+o v16 (2016-10-10)
+  + Extended data through September 2015.
+o v15 (2016-09-07)
+  + Extended data through August 2015.
+o v14 (2016-07-08)
+  + Extended data through June 2015.
+o v13 (2016-05-02)
+  + Extended data through April 2015.
+o v12 (2016-04-13)
+  + Extended data through March 2015.
+o v11 (2016-03-11)
+  + Extended data through February 2015.
+o v10 (2016-02-09)
+  + Extended data through January 2015. (new file!)
+o v9 (2016-01-21)
+  + Extended data through December 2014.
+o v8 (2015-12-03)
+  + Extended data through November 2014.
+o v7 (2015-11-11)
+  + Extended data through October 2014.
+o v6 (2015-10-05)
+  + Extended data through September 2014.
+o v5 (2015-09-02)
+  + Extended data through August 2014.
+o v4 (2015-08-05)
+  + Extended data through July 2014.
+o v3 (2015-07-01)
+  + Extended data through June 2014.
+o v2 (2015-06-16)
+  + Extended data through May 2014.

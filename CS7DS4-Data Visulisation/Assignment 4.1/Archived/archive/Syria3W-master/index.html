@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>3W Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/dc.css"/>
+        <link rel="stylesheet" type="text/css" href="css/leaflet.css"/>
+        <link rel="stylesheet" type="text/css" href="css/site.css"/>
+        <script src="js/jquery.js"></script>
+        <script src="js/d3.min.js"></script>
+        <script src="js/crossfilter.v1.min.js"></script>
+        <script src="js/dc.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/dc.leaflet.js"></script>
+        <script src="js/topojson.v1.min.js"></script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-46399763-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </head>
+    <body>
+        <div class="container">
+                <div id="header" class="row">
+                    <h2 id="title"></h2>
+                    <div class="col-md-8">
+                        <p>Who is doing what and where in the Syria Crisis response.</p>
+                        <p><b>2015 to Q1 2016</b></p>
+                        <p>This 3W is in draft stages. Please assist by contributing your ongoing and planned 3Ws. Click the graphs or map to interact.<br />Last Updated: 20 June, 2016 - Contact: <a href='mailto:rydelafosse@redcross.org.uk' target='_blank'>Ryan Delafosse</a></p>
+                    </div>
+                    <div class="col-md-1">
+                        <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All</a>
+                    </div>
+                    <div id="count-info" class="col-md-3">
+                        <span class="filter-count "></span> selected out of <span class="total-count "></span> records.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-12"><p id="description"></p>
+                                <div class="hdx-3w-viz" id="hdx-3W-status">
+                                    <p>Status</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="hdx-3w-viz" id="hdx-3W-what">
+                                    <p>What</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3"><div id="hdx-3W-who" class="hdx-3w-viz"><p>Who (Top 20)</p></div></div>
+                    <div class="col-md-6"><p id="wheretitle">Where</p><div  class="hdx-3w-viz" id="hdx-3W-where"></div></div>
+                </div>
+            <div class="row">
+                <table class="table table-hover" id="data-table">
+                    <thead><tr class="header">
+                        <th>Municipality</th>
+                        <th>Sector</th>
+                        <th>Activity</th>
+                        <th>Organisation</th>
+                        <th>Status</th>
+                        <th>End Date</th>
+                        <th>More Info</th>
+                        <th>Quantity</th>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/site.js"></script>
+    </body>
+</html>

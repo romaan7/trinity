@@ -1,0 +1,198 @@
+<!-- Main Menu area start-->
+<div class="main-menu-area mg-tb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
+                    <li class="active">
+                        <a  href="#Home" title="Login to view other dashboards"><i class="notika-icon notika-house"></i> Home</a>
+                    </li>
+                    <li>
+                        <a  href="DublinBikes"><i class="notika-icon notika-mail"></i> DublinBikes</a>
+                    </li>
+                    <li>
+                        <a  href="CityEvents"><i class="notika-icon notika-edit"></i> CityEvents</a>
+                    </li>
+                    <li>
+                        <a  href="IrishRail"><i class="notika-icon notika-bar-chart"></i> IrishRail</a>
+                    </li>
+                    <li>
+                        <a  href="Weather"><i class="notika-icon notika-windows">Weather</i> Weather</a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="CarPark"><i class="notika-icon notika-form"></i> Car Park</a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="templates/analytics.html"><i class="notika-icon notika-app"></i>Analytics</a>
+                    </li>
+                    <!--li>
+                        <a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Pages</a>
+                    </li>-->
+                </ul>
+                <div class="tab-content custom-menu-content">
+                    <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
+                    {% if user.is_authenticated %}
+                        <!-- <ul class="notika-main-menu-dropdown">
+                            <li>
+                                <a href="#">Home Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="DublinBikes">Dublin bikes </a>
+                            </li>
+                            <li>
+                                <a href="CityEvents">City Events Calendar</a>
+                            </li>
+                            <li>
+                                <a href="IrishRail">Irish Rail </a> -->
+
+                               <!-- <a href="CityEvents/ListEventData">City Events Calendar</a> -->
+
+                            <!-- </li>
+                            <li>
+                                <a href="Weather">Weather</a>
+                            </li>
+                            <li>
+                                <a href="CarPark">Car Park</a>
+                            </li>
+                            <li>
+                                <a href="templates/analytics.html">Analytics</a>
+                            </li>
+
+                        </ul> -->
+                        {% endif %}
+                    </div>
+                    <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <ul class="notika-main-menu-dropdown">
+                            <li>
+                                <a href="templates/inbox.html">Inbox</a>
+                            </li>
+                            <li>
+                                <a href="templates/view-email.html">View Email</a>
+                            </li>
+                            <li>
+                                <a href="templates/compose-email.html">Compose Email</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <ul class="notika-main-menu-dropdown">
+                            <li>
+                                <a href="templates/animations.html">Animations</a>
+                            </li>
+                            <li>
+                                <a href="templates/google-map.html">Google Map</a>
+                            </li>
+                            <li>
+                                <a href="templates/data-map.html">Data Maps</a>
+                            </li>
+                            <li>
+                                <a href="templates/code-editor.html">Code Editor</a>
+                            </li>
+                            <li>
+                                <a href="templates/image-cropper.html">Images Cropper</a>
+                            </li>
+                            <li>
+                                <a href="templates/wizard.html">Wizard</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <ul class="notika-main-menu-dropdown">
+                            <li>
+                                <a href="templates/flot-charts.html">Flot Charts</a>
+                            </li>
+                            <li>
+                                <a href="templates/bar-charts.html">Bar Charts</a>
+                            </li>
+                            <li>
+                                <a href="templates/line-charts.html">Line Charts</a>
+                            </li>
+                            <li>
+                                <a href="templates/area-charts.html">Area Charts</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="Tables" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <ul class="notika-main-menu-dropdown">
+                            <li>
+                                <a href="templates/normal-table.html">Normal Table</a>
+                            </li>
+                            <li>
+                                <a href="templates/data-table.html">Data Table</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="Forms" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <ul class="notika-main-menu-dropdown">
+                            <li>
+                                <a href="templates/form-elements.html">Form Elements</a>
+                            </li>
+                            <li>
+                                <a href="templates/form-components.html">Form Components</a>
+                            </li>
+                            <li>
+                                <a href="templates/form-examples.html">Form Examples</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <ul class="notika-main-menu-dropdown">
+                            <li>
+                                <a href="templates/notification.html">Notifications</a>
+                            </li>
+                            <li>
+                                <a href="templates/alert.html">Alerts</a>
+                            </li>
+                            <li>
+                                <a href="templates/modals.html">Modals</a>
+                            </li>
+                            <li>
+                                <a href="templates/buttons.html">Buttons</a>
+                            </li>
+                            <li>
+                                <a href="templates/tabs.html">Tabs</a>
+                            </li>
+                            <li>
+                                <a href="templates/accordion.html">Accordion</a>
+                            </li>
+                            <li>
+                                <a href="templates/dialog.html">Dialogs</a>
+                            </li>
+                            <li>
+                                <a href="templates/popovers.html">Popovers</a>
+                            </li>
+                            <li>
+                                <a href="templates/tooltips.html">Tooltips</a>
+                            </li>
+                            <li>
+                                <a href="templates/dropdown.html">Dropdowns</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="Page" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <ul class="notika-main-menu-dropdown">
+                            <li>
+                                <a href="templates/contact.html">Contact</a>
+                            </li>
+                            <li>
+                                <a href="templates/invoice.html">Invoice</a>
+                            </li>
+                            <li>
+                                <a href="templates/typography.html">Typography</a>
+                            </li>
+                            <li>
+                                <a href="templates/color.html">Color</a>
+                            </li>
+                            <li>
+                                <a href="templates/login-register.html">Login Register</a>
+                            </li>
+                            <li>
+                                <a href="templates/404.html">404 Page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

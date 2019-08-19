@@ -1,0 +1,627 @@
+  <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Roman Shaikh">
+    <meta name="description" content="CS7DS4-Data Visulisation A">
+    <meta name="keywords" content="Data Sciencev - CS7DS4-Data Visulisation">
+		<title>Nightingale's coxcomb</title>
+		<script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+    * { 
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box; 
+}
+
+body {
+	font-family: 'Cabin', sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #474747;
+	width: 100%;
+	min-height: 100%;
+}
+
+figure {
+	position: relative;
+	float: left;
+	width: 10%;
+	min-width: 400px;
+	margin-top: -100px;
+}
+
+h1 {
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 24px;
+}
+
+
+
+
+.title {
+	font-size: 18px;
+	text-align: center;
+  color: #80cdc1;
+	display: block;
+	margin: 0 auto;
+	margin-top: 15px;
+  position: relative;
+
+}
+
+
+
+.subtitle {
+	font-size: 16px;
+	width: 50%;
+	min-width: 400px;
+	margin-top: 16px;
+	text-align: center;
+}
+
+	.subtitle.left {
+		float: left;
+	}
+
+	.subtitle.right {
+		float: right;
+	}
+
+
+.caption {
+	position: relative;
+	top: -170px;
+	width: 320px;
+	display: block;
+	margin: 0 auto;
+	font-style: oblique;
+	font-size: 12px;
+}
+
+.caption p {
+		margin: 0;
+		text-indent: 12px;
+	}
+
+.canvas {
+	font-family: 'Cabin', sans-serif;
+ 	font-size: 14px;
+ 	fill: #474747;
+ 	font-weight: normal;
+}
+
+.wedge {
+	stroke: #000000;
+	stroke-width: 2px;
+}
+
+.label {
+	font-size: 15px;
+}
+
+.disease {
+	fill: rgb(252,141,89);
+}
+
+.other {
+	fill: rgb(255,255,100);
+}
+
+.wounds {
+	fill: rgb(145,207,96);
+}
+
+.legend {
+	margin-top: -100px;
+	width: 500px;
+	height: 10px;
+	padding: 0 20px;
+	display: block;
+	position: center;
+	margin: 0 auto;
+	top: -15px;
+	text-align: right;
+}
+
+.legend-canvas {
+	margin-top: 150px;
+}
+
+
+.legend-entry{
+	text-transform: uppercase;
+
+}
+
+.legend-entry{
+	text-transform: uppercase;
+
+}
+
+.chart.figure1{
+float: left;
+}
+
+.chart.figure2{
+float: right;
+}
+
+#top, #bottom, #left, #right {
+	background: #018571;
+	position: fixed;
+	}
+	#left, #right {
+		top: 0; bottom: 0;
+		width: 15px;
+		}
+		#left { left: 0; }
+		#right { right: 0; }
+		
+	#top, #bottom {
+		left: 0; right: 0;
+		height: 15px;
+		}
+    #top{
+		left: 0; right: 0;
+		height: 50px;
+		}
+		#top { top: 0; }
+		#bottom { bottom: 0; }
+    
+    p{
+    font-size: 15px;
+    float: left;
+    left:100;
+    margin-top: -10px;
+    margin-left: 15px;
+  	text-align: left;
+
+    }
+    
+    </style>
+	</head>
+	<body>	
+<div id="left"></div>
+<div id="right"></div>
+<div id="bottom"></div>
+		<script type="text/javascript">
+    
+    
+var Chart = {};
+
+Chart.rose = function() {
+
+	var margin = {'top': 20, 'right': 20, 'bottom': 20, 'left': 20},
+		height = 500,
+		width = 500,
+		color = 'rgb(0,0,0)',
+		area = function(d) { return [d.y]; },
+		angle = function(d) { return d.x; },
+		radiusScale = d3.scaleLinear(),
+		angleScale = d3.scaleLinear().range( [Math.PI, 3*Math.PI ] ),
+		domain = [0, 1],
+		legend = [''],
+		label = function(d) { return d.label; },
+		delay = 1,
+		duration = 1,
+		canvas, graph, centerX, centerY, numWedges, wedgeGroups, wedges, legendGroup;
+
+	// Arc Generator:
+	var arc = d3.arc()
+		.innerRadius( 0 )
+		.outerRadius( function(d,i) { return radiusScale( d.radius ); } )
+		.startAngle( function(d,i) { return angleScale( d.angle ); } );
+
+	function chart( selection ) {
+
+  selection.each( function( data ) {
+			// Determine the number of wedges:
+			numWedges = data.length;
+
+			// Standardize the data:
+			data = formatData( data );
+      
+			// Update the chart parameters:
+			updateParams();
+
+			// Create the chart base:
+			createBase( this );
+
+			// Create the wedges:
+			createWedges( data );
+  
+
+		});
+
+	}; // end FUNCTION chart()
+
+	//
+	function formatData( data ) {
+		// Convert data to standard representation; needed for non-deterministic accessors:
+		data = data.map( function(d, i) {
+			return {
+				'angle': angle.call(data, d, i),
+				'area': area.call(data, d, i),
+				'label': label.call(data, d, i)			
+			};
+		});
+
+		// Now convert the area values to radii:
+		// http://understandinguncertainty.org/node/214 
+		return data.map( function(d, i) {
+			return {
+				'angle': d.angle,
+				'label': d.label,
+				'radius': d.area.map( function(area) {
+					return Math.sqrt( area*numWedges / Math.PI );
+				})
+			}
+		})
+	}; // end FUNCTION formatData()
+
+	//
+	function updateParams() {
+		// Update the arc generator:
+		arc.endAngle( function(d,i) { return angleScale( d.angle ) + (Math.PI / (numWedges/2)); } );
+
+		// Determine the chart center:
+		centerX = (width - margin.left - margin.right) / 2;
+		centerY = (height - margin.top - margin.bottom) / 2;
+
+		// Update the radius scale:
+		radiusScale.domain( domain )
+			.range( [0, d3.min( [centerX, centerY] ) ] );
+
+		// Update the angle scale:
+		angleScale.domain( [0, numWedges] );		
+	}; // end FUNCTION updateParams()
+
+	// 
+	function createBase( selection ) {
+
+		// Create the SVG element:
+		canvas = d3.select( selection ).append('svg:svg')
+			.attr('width', width)
+			.attr('height', height)
+			.attr('class', 'canvas');
+
+		// Create the graph element:
+		graph = canvas.append('svg:g')
+			.attr('class', 'graph')
+			.attr('transform', 'translate(' + (centerX + margin.left) + ',' + (centerY + margin.top) + ')');
+
+	}; // end FUNCTION createBase()
+
+
+	function createWedges( data ) {
+  // Create the wedge groups:
+		wedgeGroups = graph.selectAll('.wedgeGroup')
+			.data( data )
+		  .enter().append('svg:g')
+		  	.attr('class', 'wedgeGroup')
+		  	.attr('transform', 'scale(0,0)');
+
+		// Create the wedges:
+		wedges = wedgeGroups.selectAll('.wedge')
+		  	.data( function(d) { 
+		  		var ids = d3.range(0, legend.length);
+
+		  		ids.sort( function(a,b) { 
+			  		var val2 = d.radius[b],
+			  			val1 = d.radius[a]
+			  		return  val2 - val1; 
+			  	});
+			  	return ids.map( function(i) {
+			  		return {
+			  			'legend': legend[i],
+			  			'radius': d.radius[i],
+			  			'angle': d.angle
+			  		};
+			  	});
+		  	})
+		  .enter().append('svg:path')
+		  	.attr('class', function(d) { return 'wedge ' + d.legend; })
+		  	.attr('d', arc );
+
+		// Append title tooltips:
+		wedges.append('svg:title')
+			.text( function(d) { return d.legend + ': ' + Math.floor(Math.pow(d.radius,2) * Math.PI / numWedges); });
+
+		// Transition the wedges to view:
+		wedgeGroups.transition()
+			.delay( delay )
+			.duration( function(d,i) { 
+				return duration*i;
+			})
+			.attr('transform', 'scale(1,1)');
+
+		// Append labels to the wedgeGroups:
+		var numLabels = 1
+    
+		wedgeGroups.selectAll('.label-path')
+			.data( function(d,i) { 
+				return [
+					{
+						'index': i,
+						'angle': d.angle,
+						'radius': d3.max( d.radius.concat( [23] ) )
+					}
+				];
+			} )
+		  .enter().append('svg:path')
+		  	.attr('class', 'label-path')
+		  	.attr('id', function(d) {
+		  		return 'label-path' + (d.index + numLabels);
+		  	})
+			.attr('d', arc)
+		  	.attr('fill', 'none')
+		  	.attr('stroke', 'none');
+
+		wedgeGroups.selectAll('.label')
+			.data( function(d,i) { 
+				return [
+					{
+						'index': i,
+						'label': d.label
+					}
+				];
+			} )
+		  .enter().append('svg:text')
+	   		.attr('class', 'label')
+	   		.attr('text-anchor', 'start')
+	   		.attr('x', 5)
+	   		.attr('dy', '-.71em')
+	   		.attr('text-align', 'center')
+	  		.append('textPath')
+	  			.attr('xlink:href', function(d,i) { 
+	  				return '#label-path' + (d.index + numLabels);
+	  			})
+	  			.text( function(d) { return d.label; } );
+
+	}; // end FUNCTION createWedges()	
+
+	// Set/Get: margin
+	chart.margin = function( _ ) {
+		if (!arguments.length) return margin;
+		margin = _;
+		return chart;
+	};
+
+	// Set/Get: width
+	chart.width = function( _ ) {
+		if (!arguments.length) return width;
+		width = _;
+		return chart;
+	};
+
+	// Set/Get: height
+	chart.height = function( _ ) {
+		if (!arguments.length) return height;
+		height = _;
+		return chart;
+	};
+
+	// Set/Get: area
+	chart.area = function( _ ) {
+		if (!arguments.length) return area;
+		area = _;
+		return chart;
+	};
+
+	// Set/Get: angle
+	chart.angle = function( _ ) {
+		if (!arguments.length) return angle;
+		angle = _;
+		return chart;
+	};
+
+	// Set/Get: label
+	chart.label = function( _ ) {
+		if (!arguments.length) return label;
+		label = _;
+		return chart;
+	};
+
+	// Set/Get: domain
+	chart.domain = function( _ ) {
+		if (!arguments.length) return domain;
+		domain = _;
+		return chart;
+	};
+
+	// Set/Get: legend
+	chart.legend = function( _ ) {
+		if (!arguments.length) return legend;
+		legend = _;
+		return chart;
+	};
+
+	// Set/Get: delay
+	chart.delay = function( _ ) {
+		if (!arguments.length) return delay;
+		delay = _;
+		return chart;
+	};
+
+	// Set/Get: duration
+	chart.duration = function( _ ) {
+		if (!arguments.length) return duration;
+		duration = _;
+		return chart;
+	};
+
+	return chart;
+
+}; // end FUNCTION rose()
+
+
+Chart.legend = function( entries ) {
+	// Add a legend:
+	var legend = {}, 
+		height,
+		symbolRadius = 5;
+
+	legend.container = d3.select('body').append('div')
+		.attr('class', 'legend');
+
+	height = parseInt( d3.select('.legend').style('height'),20);
+	legend.canvas = legend.container.append('svg:svg')
+			.attr('class', 'legend-canvas');
+
+	legend.entries = legend.canvas.selectAll('.legend-entry')
+		.data( entries )
+	  .enter().append('svg:g')
+	  	.attr('class', 'legend-entry')
+	  	.attr('transform', function(d,i) { return 'translate(' +(height/2)+', '+(symbolRadius + i*25)    + ')'; });
+
+	// Append circles to each entry with appropriate class:
+	legend.entries.append('svg:circle')
+		.attr('class', function(d) { return 'legend-symbol ' + d;} )
+		.attr('r', symbolRadius )
+		.attr('cy', 0 )
+		.attr('cx', 0 );
+
+	// Append text to each entry:
+	legend.entries.append('svg:text')
+		.attr('class', 'legend-text' )
+		.attr('text-anchor', 'start')
+		.attr('dy', '.35em')
+		.attr('transform', 'translate(' + (symbolRadius*2) + ',0)')
+		.text( function(d) { return d; } );
+
+}; // end FUNCTION legend()
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			var rose = Chart.rose(),
+				height = 500,
+				format = d3.timeParse('%Y-%m-%d'),
+				causes = ['disease', 'wounds', 'other'],
+				labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+			d3.select('body').append('div')
+				.attr('id', 'top')
+        .append('h2')
+				.attr('class', 'title')
+				.html( '<p>Name: Roman Shaikh <br> CS7DS4-Data Visulisation</p>Nightingale&rsquo;s coxcomb chart ( A visulaziation of the Causes of Mortality in the Army)');
+
+      //load data from csv
+      d3.csv("data/Nightingale.csv")
+        .then(function(data , error) {
+
+        var scalar;
+				data.forEach( function(d) {
+        	d.date = format(d.Date);
+					d.label = labels[d.date.getMonth()];
+					d.disease = d.Disease_rate * 1;
+					d.wounds  = d.Wounds_rate * 1;
+					d.other   = d.Other_rate * 1;
+				} );
+        
+				// Get the maximum value:
+				var maxVal = d3.max( data, function(d) {
+					return d3.max( [d.disease, d.wounds, d.other] );
+				});
+        
+				// Where the maximum value gives us the maximum radius:
+				var maxRadius = Math.sqrt(maxVal*12 / Math.PI);
+
+				// Divide the dataset in two:
+				var dataset2 = data.slice(12,24),
+					dataset1 = data.slice(0,12);
+				
+        
+        				// Create a legend:
+				Chart.legend( causes );
+        
+        //Figure 1 start
+				// Append a new figure to the DOM:
+				figure = d3.select( 'body' )
+					.append( 'figure' );
+          
+				// Get the figure width:
+				width = parseInt( figure.style( 'width' ), 10 );
+
+				// Update the chart generator settings:
+				rose.legend( causes )
+					.width( width )
+					.height( height )
+					.delay( 0 )
+					.duration( 0 )
+					.domain( [0, maxRadius] )
+					.angle( function(d) { return d.date.getMonth(); } )
+					.area( function(d, i) { return [d.Disease_rate, d.Wounds_rate, d.Other_rate]; } );							
+
+				// Bind the data and generate a new chart:        
+				figure.datum(dataset1)
+					.attr('class', 'chart figure2')
+					.call( rose );	
+        
+        /////////////////////////////////////////////
+        // Append a new figure to the DOM:
+				figure = d3.select( 'body' )
+					.append( 'figure' );
+          
+          d3.selectAll(".figure2").select(".canvas")
+            .attr("width","300")
+            .attr("hight","400")
+            .attr("transform","rotate(90)");
+          
+				// Get the figure width:
+				width = parseInt( figure.style( 'width' ), 10 );
+
+				// Update the chart generator settings:
+				rose.legend( causes )
+					.width( width )
+					.height( height )
+					.delay( 0 )
+					.duration( 0 )
+					.domain( [0, maxRadius] )
+					.angle( function(d) { return d.date.getMonth(); } )
+					.area( function(d, i) { return [d.Disease_rate, d.Wounds_rate, d.Other_rate]; } );							
+
+				// Bind the data and generate a new chart:        
+				figure.datum(dataset1)
+					.attr('class', 'chart figure1')
+					.call( rose );	
+        
+        ////////////////////////
+/*        
+        //Figure 2 start
+        // Append a new figure to the DOM:
+				figure = d3.select( 'body' )
+					.append( 'figure' );
+
+				// Get the figure width:
+				width = parseInt( figure.style( 'width' ), 10 );
+
+				// Update the chart generator settings:
+				rose.width( width )
+					.delay( 0 );
+
+				// Bind the second dataset and generate a new chart:
+				figure.datum( dataset2 )
+					.attr('class', 'chart figure2')
+					.call( rose );	
+        */  
+			d3.select('body').append('h3')
+				.attr('class', 'subtitle right')
+				.html('April 1854 - March 1855 (Zoomed + Rotated)');
+
+			d3.select('body').append('h3')
+				.attr('class', 'subtitle left')
+				.html('April 1854 - March 1855');
+
+			})
+ 
+
+		</script>
+	</body>
+</html>

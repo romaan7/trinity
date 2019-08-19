@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://d3js.org/d3.v4.min.js" language="JavaScript"></script>
+    <style>
+    body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
+    .line {
+      fill: none;
+      stroke: black;
+      stroke-width: 1.5px;
+    }
+    </style>
+    <title>Test</title>
+</head>
+
+<body>
+<p id="demo"></p>
+
+<script>
+var weather_data = []
+
+// Margin setup
+var margin = {top: 20, right: 30, bottom: 20, left: 100},
+    width = 760 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
+
+// Basic SVG canvas
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// http://bl.ocks.org/zanarmstrong/raw/05c1e95bf7aa16c4768e/
+var dateParser = d3.timeParse("%H");
+var displayDate = d3.timeFormat("%m");
+// Temporal scale
+var x = d3.scaleTime()
+    .range([0, width]);
+
+// Linear scale
+var y = d3.scaleLinear()
+    .range([height, height - 200]);
+
+var line = d3.line()
+    .x(function(weather_data) { return x(weather_data.day_time); })
+    .y(function(weather_data) { return y(weather_data.Temperature); });
+
+var g = svg.append("g")
+    .attr("transform", "translate(10, 0)");
+d3.json("/WeatherPollution/weatherData", function(error, wdata) {
+for (i in wdata) {
+	var obj = {};
+	obj.Station = wdata[i].Station;
+	obj.Temperature = wdata[i].Temperature
+	obj.last_update = wdata[i].last_update
+	obj.rainfall = wdata[i].rainfall
+	var mydate = new Date(wdata[i].last_update);
+	obj.day_time = mydate;
+	weather_data.push(obj);
+	  }
+
+	x.domain(d3.extent(weather_data, function(weather_data) { return weather_data.day_time; }));
+	y.domain([0, d3.max(weather_data, function(weather_data) { return weather_data.Temperature; })]);
+
+	svg.selectAll("text").data(weather_data).enter()
+	   .append("text")
+		.attr("y", 420)
+		.attr("x", function(weather_data) { return x(weather_data.day_time); })
+		.attr("id", "")
+		.style("font-size", 10)
+		.style("font-family", "monospace")
+		.text(function(weather_data, i) { return weather_data.day_time; });
+
+	g.selectAll(".Temperature").data([weather_data[weather_data.length -1]]).enter()
+	   .append("text")
+		.attr("class", "Temperature")
+		.attr("y", function(weather_data) { return y(weather_data.Temperature); })
+		.attr("x", width - 20)
+		.style("font-size", 20)
+		.style("font-family", "monospace")
+		.text(function(weather_data, i) { return weather_data.Temperature; });
+
+	g.selectAll("circle").data(weather_data).enter()
+	   .append("circle")
+		.attr("cx", function(weather_data) { return x(weather_data.day_time); })
+		.attr("cy", function(weather_data) { return y(weather_data.Temperature); })
+		.attr("r", function(weather_data, i) { return 5; })
+		.attr("day_time", function(weather_data) { return weather_data.day_time; })
+		.style("fill", "#fcb0b5")
+		.on("mouseover", function(weather_data){
+
+			d3.select(this).transition().duration(200).style("fill", "#d30715");
+
+			g.selectAll("#tooltip").data([weather_data]).enter().append("text")
+				.attr("id", "tooltip")
+				.text(function(weather_data, i) { return weather_data.Temperature; })
+				.attr("y", function(weather_data) {return y(weather_data.Temperature) - 12})
+				.attr("x", function(weather_data) { return x(weather_data.day_time); })
+
+			g.selectAll("#tooltip_path").data([weather_data]).enter().append("line")
+				.attr("id", "tooltip_path")
+				.attr("class", "line")
+				.attr("weather_data", line)
+				.attr("x1", function(weather_data) {return x(weather_data.day_time)})
+				.attr("x2", function(weather_data) {return x(weather_data.day_time)})
+				.attr("y1", height)
+				.attr("y2", function(weather_data) {return y(weather_data.Temperature)})
+				.attr("stroke", "black")
+				.style("stroke-dasharray", ("3, 3"));
+		})
+		.on("mouseout", function(weather_data) {
+			d3.select(this).transition().duration(500).style("fill", "#fcb0b5");
+			g.selectAll("#tooltip").remove();
+			g.selectAll("#tooltip_path").remove();
+		});
+
+		g.selectAll("path").data([weather_data]).enter().append("path")
+		  .attr("class", "line")
+		  .attr("d", line);
+
+		svg.append("g")
+		  .attr("class", "axis axis--x")
+		  .attr("transform", "translate(0," + height + ")")
+		  .call(d3.axisBottom(x));
+
+		svg.append("g")
+		  .call(d3.axisLeft(y));
+		svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - margin.left)
+            .attr("x",0 - (height / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text("Temperature");
+
+});
+</script>
+</body>
+</html>

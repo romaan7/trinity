@@ -1,0 +1,754 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <style>
+        .col-lg-9 {
+            width: 100% !important;
+        }
+
+        .resp-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.resp-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+}
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Analytics</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+        ============================================ -->
+    {% load static %}
+    <!-- jquery
+        ============================================ -->
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'Main/img/favicon.ico' %}">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+        ============================================ -->
+
+    <link rel="stylesheet" href="{% static 'Main/css/bootstrap.min.css' %}">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/font-awesome.min.css' %}">
+    <!-- owl.carousel CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'Main/css/owl.theme.css' %}">
+    <link rel="stylesheet" href="{% static 'Main/css/owl.transitions.css' %}">
+    <!-- meanmenu CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/meanmenu/meanmenu.min.css' %}">
+    <!-- animate CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/animate.css' %}">
+    <!-- normalize CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/normalize.css' %}">
+    <!-- mCustomScrollbar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/scrollbar/jquery.mCustomScrollbar.min.css' %}">
+    <!-- jvectormap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/jvectormap/jquery-jvectormap-2.0.3.css' %}">
+    <!-- notika icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/notika-custom-icon.css' %}">
+    <!-- wave CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/wave/waves.min.css' %}">
+    <!-- 'Main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/main.css' %}">
+    <!-- style CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/style.css' %}">
+    <!-- responsive CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'Main/css/notification/notification.css' %}">
+
+    <!-- modernizr JS
+        ============================================ -->
+    <script src="{% static 'Main/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+    real_time = [];
+    $.getJSON( "/RealTimeData", function( data ) {
+          $.each( data, function(i) {
+                  var obj = {};
+                  obj.zone = data[i].dublin_zone;
+                  obj.bikes = data[i].total_bikes;
+                  obj.park = data[i].total_parkings;
+                  obj.bus = data[i].total_buses;
+                  real_time.push(obj);
+                });
+            for (var i = 0; i < real_time.length; i++) {
+                if((real_time[i].zone).trim() == "CCITY")
+                {
+                //if((real_time[i].bus + real_time[i].bikes + real_time[i].park) >= 20){ $(".zone1 .accordion-stn h4").attr('style','color:red;');}
+                 $(".zone1 .bus").html("<p> Total Number of Buses: " + real_time[i].bus + "</p>");
+                 $(".zone1 .bike").html("<p>  Total Number of Bikes: " + real_time[i].bikes + "</p>");
+                 $(".zone1 .park").html("<p>  Total Number of Buses: Parking Spaces: " + real_time[i].park + "</p>");
+                }
+                if((real_time[i].zone).trim() == "SCITY")
+                {
+                //if((real_time[i].bus + real_time[i].bikes + real_time[i].park) >= 20){ $(".zone2 .accordion-stn h4").attr('style','color:red;');}
+                 $(".zone2 .bus").html("<p> Total Number of Buses: " + real_time[i].bus + "</p>");
+                 $(".zone2 .bike").html("<p>  Total Number of Bikes: " + real_time[i].bikes + "</p>");
+                 $(".zone2 .park").html("<p>  Total Number of Buses: Parking Spaces: " + real_time[i].park + "</p>");
+                }
+                if((real_time[i].zone).trim() == "WCITY")
+                {
+                //if((real_time[i].bus + real_time[i].bikes + real_time[i].park) >= 20){ $(".zone3 .accordion-stn h4").attr('style','color:red;');}
+                 $(".zone3 .bus").html("<p> Total Number of Buses: " + real_time[i].bus + "</p>");
+                 $(".zone3 .bike").html("<p>  Total Number of Bikes: " + real_time[i].bikes + "</p>");
+                 $(".zone3 .park").html("<p>  Total Number of Buses: Parking Spaces: " + real_time[i].park + "</p>");
+                }
+                if((real_time[i].zone).trim() == "NCITY")
+                {
+                //if((real_time[i].bus + real_time[i].bikes + real_time[i].park) >= 20){ $(".zone4 .accordion-stn h4").attr('style','color:red;');}
+                 $(".zone4 .bus").html("<p> Total Number of Buses: " + real_time[i].bus + "</p>");
+                 $(".zone4 .bike").html("<p>  Total Number of Bikes: " + real_time[i].bikes + "</p>");
+                 $(".zone4 .park").html("<p>  Total Number of Buses: Parking Spaces: " + real_time[i].park + "</p>");
+                }
+               
+            }
+         });
+    </script>
+</head>
+
+<body>
+<!------Below tags are added as a place holder for LUAS news data-------->
+<div id="storage" style="display:none;"> </div>
+<div id="displayed" style="display:none;"> </div>
+<!---------END--------->
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Start Header Top Area -->
+    <div class="header-top-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="logo-area">
+                        <a href="#"><h1 style="color:snow"> Analytics </h1></a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div class="header-top-menu">
+                        <ul class="nav navbar-nav notika-top-nav">
+                           <!---LOGIN BLOCK START-->
+                            <li class="nav-item">
+                                {% if user.is_authenticated %}
+                                    <a href="{% url 'Authentication:logout' %}"  role="button" class="nav-link"><p style="display:inline; font-size:15px;">Welcome {{ user.username }} </p><span><i class="notika-icon notika-close"></i></span></a>
+                                {% else %}
+                                    <a href="{% url 'Authentication:login' %}"  role="button" class="nav-link"><p style="display:inline; font-size:15px;">You are not logged in </p><span><i class="notika-icon notika-support"></i></span></a>
+                                {% endif %}
+                            </li>
+                            <!---LOGIN BLOCK END-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Header Top Area -->
+    <!-- Mobile Menu start -->
+    <div class="mobile-menu-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="mobile-menu">
+                        <nav id="dropdown">
+                            <ul class="mobile-menu-nav">
+                                <li>
+                                    <a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
+                                    <ul class="collapse dropdown-header-top">
+                                        <li><a href="templates/index.html">Dashboard One</a></li>
+                                        <li><a href="templates/index_2.html">Dashboard Two</a></li>
+                                        <li><a href="templates/index_3.html">Dashboard Three</a></li>
+                                        <li><a href="templates/index_4.html">Dashboard Four</a></li>
+                                        <li><a href="templates/analytics.html">Analytics</a></li>
+                                        <li><a href="templates/widgets.html">Widgets</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" data-target="#demoevent" href="#">Email</a>
+                                    <ul id="demoevent" class="collapse dropdown-header-top">
+                                        <li><a href="templates/inbox.html">Inbox</a></li>
+                                        <li><a href="templates/view-email.html">View Email</a></li>
+                                        <li><a href="templates/compose-email.html">Compose Email</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" data-target="#democrou" href="#">Interface</a>
+                                    <ul id="democrou" class="collapse dropdown-header-top">
+                                        <li><a href="animations.html">Animations</a></li>
+                                        <li><a href="google-map.html">Google Map</a></li>
+                                        <li><a href="data-map.html">Data Maps</a></li>
+                                        <li><a href="code-editor.html">Code Editor</a></li>
+                                        <li><a href="image-cropper.html">Images Cropper</a></li>
+                                        <li><a href="wizard.html">Wizard</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" data-target="#demolibra" href="#">Charts</a>
+                                    <ul id="demolibra" class="collapse dropdown-header-top">
+                                        <li><a href="flot-charts.html">Flot Charts</a></li>
+                                        <li><a href="bar-charts.html">Bar Charts</a></li>
+                                        <li><a href="line-charts.html">Line Charts</a></li>
+                                        <li><a href="area-charts.html">Area Charts</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" data-target="#demodepart" href="#">Tables</a>
+                                    <ul id="demodepart" class="collapse dropdown-header-top">
+                                        <li><a href="normal-table.html">Normal Table</a></li>
+                                        <li><a href="data-table.html">Data Table</a></li>
+                                    </ul>
+                                </li>
+                                <!--<li>
+                                    <a data-toggle="collapse" data-target="#demo" href="#">Forms</a>
+                                    <ul id="demo" class="collapse dropdown-header-top">
+                                        <li><a href="templates/form-elements.html">Form Elements</a></li>
+                                        <li><a href="templates/form-components.html">Form Components</a></li>
+                                        <li><a href="templates/form-examples.html">Form Examples</a></li>
+                                    </ul>
+                                </li>-->
+                                <li>
+                                    <a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">App views</a>
+                                    <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
+                                        <li>
+                                            <a href="notification.html">Notifications</a>
+                                        </li>
+                                        <li>
+                                            <a href="templates/alert.html">Alerts</a>
+                                        </li>
+                                        <li>
+                                            <a href="templates/modals.html">Modals</a>
+                                        </li>
+                                        <li>
+                                            <a href="templates/buttons.html">Buttons</a>
+                                        </li>
+                                        <li>
+                                            <a href="templates/tabs.html">Tabs</a>
+                                        </li>
+                                        <li>
+                                            <a href="templates/accordion.html">Accordion</a>
+                                        </li>
+                                        <li>
+                                            <a href="templates/dialog.html">Dialogs</a>
+                                        </li>
+                                        <li>
+                                            <a href="templates/popovers.html">Popovers</a>
+                                        </li>
+                                        <li>
+                                            <a href="templates/tooltips.html">Tooltips</a>
+                                        </li>
+                                        <li>
+                                            <a href="templates/dropdown.html">Dropdowns</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" data-target="#Pagemob" href="#">Pages</a>
+                                    <ul id="Pagemob" class="collapse dropdown-header-top">
+                                        <li>
+                                            <a href="templates/contact.html">Contact</a>
+                                        </li>
+                                        <li>
+                                            <a href="templates/invoice.html">Invoice</a>
+                                        </li>
+                                        <li>
+                                            <a href="templates/typography.html">Typography</a>
+                                        </li>
+                                        <li>
+                                            <a href="templates/color.html">Color</a>
+                                        </li>
+                                        <li>
+                                            <a href="login-register.html">Login Register</a>
+                                        </li>
+                                        <li>
+                                            <a href="templates/404.html">404 Page</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Menu end -->
+    <!-- Main Menu area start-->
+        <div class="main-menu-area mg-tb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                 {% if user.is_authenticated %}
+                    <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro ">
+                        <li>
+                            <a href="/" title="Login to view other dashboards"><i class="fa fa-home"></i> Home</a>
+                        </li>
+                        <li>
+                            <a  href="DublinBikes"><i class="fa fa-bicycle"></i> Dublin bikes</a>
+                        </li>
+                        <li>
+                            <a href="CityEvents"><i class="fa fa-calendar"></i> City Events</a>
+                        </li>
+                        <li>
+                            <a  href="IrishRail"><i class="fa fa-subway"></i> Irish Rail</a>
+                        </li>
+                        <li>
+                            <a  href="Weather"><i class="glyphicon glyphicon-cloud"></i> Weather</a>
+                        </li>
+                        <li>
+                            <a href="CarPark"><i class="fa fa-car"></i> Car Park</a>
+                        </li>
+                       <li>
+                            <a  href="BusDashBoard"><i class="fa fa-bus"></i>Dublin Bus </a>
+                        </li>
+                        <li class="active">
+                            <a  href="Analytics"><i class="notika-icon notika-support"></i> Analytics</a>
+                        </li>
+                    </ul>
+                    {% endif %}
+                    <div class="tab-content custom-menu-content">
+                        <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
+                       
+                            {% comment %} <ul class="notika-main-menu-dropdown">
+                                <li>
+                                    <a href="#">Home Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="DublinBikes">Dublin bikes </a>
+                                </li>
+                                <li>
+                                    <a href="CityEvents">City Events Calendar</a>
+                                </li>
+                                <li>
+                                    <a href="IrishRail">Irish Rail </a>
+
+                                </li>
+                                <li>
+                                    <a href="Weather">Weather</a>
+                                </li>
+                                <li>
+                                    <a href="CarPark">Car Park</a>
+                                </li>
+
+                                <li>
+                                    <a href="BusDashBoard">Dublin Bus</a>
+                                </li>
+                                <li>
+                                    <a href="Analytics">Analytics</a>
+                                </li>
+
+                            </ul>
+                            {% endif %} {% endcomment %}
+                        </div>
+                        <div id="DublinBikes" class="tab-pane notika-tab-menu-bg animated flipInX">
+           
+                        </div>
+
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Menu area End-->
+    <!-- Start Status area -->
+    <div class="breadcomb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-app"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Download prediction report</h2>
+                                        <p>Download the report for current month's analysis <span class="bread-ntd">Dublin City Management</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                            <a href="{% static 'Main/DublinCityPredictions.pdf' %}">
+                                <div class="breadcomb-report">
+                                    <button data-toggle="tooltip" data-placement="left" title="" class="btn waves-effect" data-original-title="Download Report"><i class="notika-icon notika-sent"></i></button>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="notification-demo">
+           <button class="btn btn-info notika-btn-info waves-effect">Get LUAS Information.</button>
+                      <button class="btn btn-info notika-btn-info waves-effect" disabled="true">Get Bus Information.</button>
+           <button class="btn btn-info notika-btn-info waves-effect" disabled="true">Get Rail Information.</button>
+           <button class="btn btn-info notika-btn-info waves-effect" disabled="true">Get Bike Information.</button>
+           <button class="btn btn-info notika-btn-info waves-effect" disabled="true">Get Road Information.</button>
+           <button class="btn btn-info notika-btn-info waves-effect" disabled="true">Get Traffic Information.</button>
+
+
+           </div>
+        </div>
+    </div>
+    <!-- End Status area-->
+    <!-- Start Sale Statistic area-->
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+     </div>
+    <div class="sale-statistic-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
+
+                    {% comment %} <div class="line-chart-wp chart-display-nn"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+                        <canvas height="400" width="515" id="linechartstyles" style="display: block; width: 515px; height: 400px;"></canvas>
+                    </div>
+                        </div>
+                        <!--<div id="curved-line-chart" class="flot-chart-sts flot-chart"></div>-->
+                    </div> {% endcomment %}
+                    <div class='tableauPlaceholder' id='viz1554578891543' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Du&#47;DublinWeatherPredictions&#47;DublinCityPredictions&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='DublinWeatherPredictions&#47;DublinCityPredictions' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Du&#47;DublinWeatherPredictions&#47;DublinCityPredictions&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1554578891543');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                </div>
+                <!---------------zone upadte------>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="accordion-wn-wp">
+                        <div class="accordion-hd">
+                            <h2>Zone Updates</h2>
+                            <p>Live updates for each zone in the city.</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 zone1">
+                                <div class="accordion-stn">
+                                                            <h4>Zone 1 : Centre </h4>
+
+                                    <div class="panel-group" data-collapse-color="nk-green" id="accordionGreen" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-collapse notika-accrodion-cus">
+                                            <div class="panel-heading" role="tab">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordionGreen" href="#accordionGreen-one" aria-expanded="false" class="collapsed">
+															Car Parking
+														</a>
+                                                </h4>
+                                            </div>
+                                            <div id="accordionGreen-one" class="collapse" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                                                <div class="panel-body park">
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-collapse notika-accrodion-cus">
+                                            <div class="panel-heading" role="tab">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionGreen" href="#accordionGreen-two" aria-expanded="false">
+															Dublin Bus
+														</a>
+                                                </h4>
+                                            </div>
+                                            <div id="accordionGreen-two" class="collapse" role="tabpanel" aria-expanded="false">
+                                                <div class="panel-body bus">
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-collapse notika-accrodion-cus">
+                                            <div class="panel-heading" role="tab">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionGreen" href="#accordionGreen-three" aria-expanded="false">
+															Dublin Bike
+														</a>
+                                                </h4>
+                                            </div>
+                                            <div id="accordionGreen-three" class="collapse" role="tabpanel" aria-expanded="false">
+                                                <div class="panel-body bike">
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 zone2">
+                                <div class="accordion-stn sm-res-mg-t-30">
+                                                            <h4>Zone 2 : South</h4>
+                                    <div class="panel-group" data-collapse-color="nk-red" id="accordionRed" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-collapse notika-accrodion-cus">
+                                            <div class="panel-heading" role="tab">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordionRed" href="#accordionRed-one" aria-expanded="false" class="collapsed">
+															Car Parking
+														</a>
+                                                </h4>
+                                            </div>
+                                            <div id="accordionRed-one" class="collapse" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                                                <div class="panel-body park">
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-collapse notika-accrodion-cus">
+                                            <div class="panel-heading" role="tab">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionRed" href="#accordionRed-two" aria-expanded="false">
+															Dublin Bus
+														</a>
+                                                </h4>
+                                            </div>
+                                            <div id="accordionRed-two" class="collapse" role="tabpanel" aria-expanded="false">
+                                                <div class="panel-body bus">
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-collapse notika-accrodion-cus">
+                                            <div class="panel-heading" role="tab">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionRed" href="#accordionRed-three" aria-expanded="false">
+															Dublin Bike
+														</a>
+                                                </h4>
+                                            </div>
+                                            <div id="accordionRed-three" class="collapse" role="tabpanel" aria-expanded="false">
+                                                <div class="panel-body bike">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 zone3">
+                                <div class="accordion-stn mg-t-30">
+                                                            <h4>Zone 3 : West</h4>
+                                    <div class="panel-group" data-collapse-color="nk-pink" id="accordionPink" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-collapse notika-accrodion-cus">
+                                            <div class="panel-heading" role="tab">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordionPink" href="#accordionPink-one" aria-expanded="false" class="collapsed">
+															Car Parking
+														</a>
+                                                </h4>
+                                            </div>
+                                            <div id="accordionPink-one" class="collapse" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                                                <div class="panel-body park">
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-collapse notika-accrodion-cus">
+                                            <div class="panel-heading" role="tab">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionPink" href="#accordionPink-two" aria-expanded="false">
+															Dublin Bus
+														</a>
+                                                </h4>
+                                            </div>
+                                            <div id="accordionPink-two" class="collapse" role="tabpanel" aria-expanded="false">
+                                                <div class="panel-body bus">
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-collapse notika-accrodion-cus">
+                                            <div class="panel-heading" role="tab">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionPink" href="#accordionPink-three" aria-expanded="false">
+															Dublin Bike
+														</a>
+                                                </h4>
+                                            </div>
+                                            <div id="accordionPink-three" class="collapse" role="tabpanel" aria-expanded="false">
+                                                <div class="panel-body bike">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 zone4">
+                                <div class="accordion-stn mg-t-30">
+                                                            <h4>Zone 4 : North</h4>
+                                    <div class="panel-group" data-collapse-color="nk-purple" id="accordionPurple" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-collapse notika-accrodion-cus">
+                                            <div class="panel-heading" role="tab">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordionPurple" href="#accordionPurple-one" aria-expanded="false" class="collapsed">
+															Car Parking
+														</a>
+                                                </h4>
+                                            </div>
+                                            <div id="accordionPurple-one" class="collapse" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                                                <div class="panel-body park">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-collapse notika-accrodion-cus">
+                                            <div class="panel-heading" role="tab">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionPurple" href="#accordionPurple-two" aria-expanded="false">
+															Dublin Bus
+														</a>
+                                                </h4>
+                                            </div>
+                                            <div id="accordionPurple-two" class="collapse" role="tabpanel" aria-expanded="false">
+                                                <div class="panel-body bus">
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-collapse notika-accrodion-cus">
+                                            <div class="panel-heading" role="tab">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionPurple" href="#accordionPurple-three" aria-expanded="false">
+															Dublin Bike
+														</a>
+                                                </h4>
+                                            </div>
+                                            <div id="accordionPurple-three" class="collapse" role="tabpanel" aria-expanded="false">
+                                                <div class="panel-body bike">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Sale Statistic area-->
+    <!-- Start Email Statistic area-->
+    <!-- End Email Statistic area-->
+    <!-- Start Realtime sts area-->
+    <!--</div>
+    </div>-->
+    <!-- End Realtime sts area-->
+    <!-- Start Footer area-->
+    <div class="footer-copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="footer-copy-right">
+                        <p>
+                            {% comment %} Copyright � 2018
+                            . All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>. {% endcomment %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer area-->
+    {% load static %}
+    <script src="{% static 'Main/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="{% static 'Main/js/bootstrap.min.js' %}"></script>
+    <!-- wow JS
+        ============================================ -->
+    <script src="{% static 'Main/js/wow.min.js' %}"></script>
+    <!-- price-slider JS
+        ============================================ -->
+    <script src="{% static 'Main/js/jquery-price-slider.js' %}"></script>
+    <!-- owl.carousel JS
+        ============================================ -->
+    <script src="{% static 'Main/js/owl.carousel.min.js' %}"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="{% static 'Main/js/jquery.scrollUp.min.js' %}"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+    <script src="{% static 'Main/js/meanmenu/jquery.meanmenu.js' %}"></script>
+    <!-- counterup JS
+        ============================================ -->
+    <script src="{% static 'Main/js/counterup/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'Main/js/counterup/waypoints.min.js' %}"></script>
+    <script src="{% static 'Main/js/counterup/counterup-active.js' %}"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script src="{% static 'Main/js/scrollbar/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <!-- jvectormap JS
+        ============================================ -->
+    <script src="{% static 'Main/js/jvectormap/jquery-jvectormap-2.0.2.min.js' %}"></script>
+    <script src="{% static 'Main/js/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+    <script src="{% static 'Main/js/jvectormap/jvectormap-active.js' %}"></script>
+    <!-- sparkline JS
+        ============================================ -->
+    <script src="{% static 'Main/js/sparkline/jquery.sparkline.min.js' %}"></script>
+    <script src="{% static 'Main/js/sparkline/sparkline-active.js' %}"></script>
+    <!-- sparkline JS
+        ============================================ -->
+    <script src="{% static 'Main/js/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'Main/js/flot/jquery.flot.resize.js' %}"></script>
+    <script src="{% static 'Main/js/flot/curvedLines.js' %}"></script>
+    <script src="{% static 'Main/js/flot/flot-active.js' %}"></script>
+    <!-- knob JS
+        ============================================ -->
+    <script src="{% static 'Main/js/knob/jquery.knob.js' %}"></script>
+    <script src="{% static 'Main/js/knob/jquery.appear.js' %}"></script>
+    <script src="{% static 'Main/js/knob/knob-active.js' %}"></script>
+    <!--  wave JS
+        ============================================ -->
+    <script src="{% static 'Main/js/wave/waves.min.js' %}"></script>
+    <script src="{% static 'Main/js/wave/wave-active.js' %}"></script>
+    <!--  todo JS
+        ============================================ -->
+    <script src="{% static 'Main/js/todo/jquery.todo.js' %}"></script>
+    <!-- plugins JS
+        ============================================ -->
+    <script src="{% static 'Main/js/plugins.js' %}"></script>
+        <!-- Charts JS
+		============================================ -->
+    <script src="{% static 'Main/js/charts/Chart.js' %}"></script>
+    <script src="{% static 'Main/js/charts/line-chart.js' %}"></script>
+    <!--  Chat JS
+        ============================================ -->
+    <script src="{% static 'Main/js/chat/moment.min.js' %}"></script>
+    <script src="{% static 'Main/js/chat/jquery.chat.js' %}"></script>
+        <!--  notification JS
+		============================================ -->
+    <script src="{% static 'Main/js/notification/bootstrap-growl.min.js' %}"></script>
+    <script src="{% static 'Main/js/notification/notification-active.js' %}"></script>
+    <!-- 'Main JS
+        ============================================ -->
+    <script src="{% static 'Main/js/main.js' %}"></script>
+    <!-- tawk chat JS
+        ============================================ -->
+    {% comment %} <script src="{% static 'Main/js/tawk-chat.js' %}"></script> {% endcomment %}
+</body>
+
+</html>

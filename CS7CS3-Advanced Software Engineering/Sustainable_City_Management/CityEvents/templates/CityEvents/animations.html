@@ -1,0 +1,214 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Dashboard One | Notika - Notika Admin Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+        ============================================ -->
+    {% load static %}
+    <!-- jquery
+        ============================================ -->
+   
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'Main/img/favicon.ico' %}">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+        ============================================ -->
+
+    <link rel="stylesheet" href="{% static 'Main/css/bootstrap.min.css' %}">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/font-awesome.min.css' %}">
+    <!-- owl.carousel CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'Main/css/owl.theme.css' %}">
+    <link rel="stylesheet" href="{% static 'Main/css/owl.transitions.css' %}">
+    <!-- meanmenu CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/meanmenu/meanmenu.min.css' %}">
+    <!-- animate CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'Main/css/animation/animation-custom.css' %}">
+    <!-- normalize CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/normalize.css' %}">
+    <!-- mCustomScrollbar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/scrollbar/jquery.mCustomScrollbar.min.css' %}">
+    <!-- jvectormap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/jvectormap/jquery-jvectormap-2.0.3.css' %}">
+    <!-- notika icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/notika-custom-icon.css' %}">
+    <!-- wave CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/wave/waves.min.css' %}">
+    <!-- 'Main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/main.css' %}">
+    <!-- style CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/style.css' %}">
+    <!-- responsive CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/responsive.css' %}">
+    <!-- modernizr JS
+        ============================================ -->
+    <script src="{% static 'Main/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+</head>
+
+
+<body>
+
+    <!-- Main Menu area End-->
+	<!-- Breadcomb area Start-->
+	<div class="breadcomb-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Breadcomb area End-->
+    <!-- Animateions area start-->
+    <div class="animation-area">
+        <div class="container">
+            <div class="row">
+
+                    
+                    {% for item in eventList %}
+                    
+                
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="animation-single-int">
+                        <div class="animation-ctn-hd">
+                            <h2>{{item.nametext |truncatechars:20 }}</h2>
+                            <h4>{{item.startutc}}</h4>
+                            <p>  {{ item.nametext| truncatechars:20 }}</p>
+                            
+                        </div>
+                        <div class="animation-img mg-b-15">
+                            <img class="animate-one" src="{% static 'Main/images/1.jpg' %}" alt="" />
+                        </div>
+
+                        
+
+                        <div class="animation-action">
+                            <!-- <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="animation-btn">
+                                        <button class="btn ant-nk-st bounce-ac">bounce</button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="animation-btn sm-res-mg-t-10 tb-res-mg-t-10 dk-res-mg-t-10">
+                                        <button class="btn ant-nk-st flash-ac">flash</button>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="row mg-t-10">
+                                <div class="col-lg-12">
+                                    <div class="animation-btn">
+                                        <!-- <button class="btn ant-nk-st pulse-ac">pulse <a class="" href=" {{ item.url }}"></a></button> -->
+                                        <a class="btn ant-nk-st pulse-ac" target="_blank" href=" {{ item.url }} ">Get Details</a>
+                                        
+    
+                                    </div>
+                                </div>
+                                <!-- <div class="col-lg-6">
+                                    <div class="animation-btn sm-res-mg-t-10 tb-res-mg-t-10 dk-res-mg-t-10">
+                                        <button class="btn ant-nk-st rubberBand-ac">rubberBand</button>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+                
+            </div>
+        </div>
+    </div>
+    <!-- Animateions area End-->
+    
+    {% load static %}
+    <script src="{% static 'Main/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="{% static 'Main/js/bootstrap.min.js' %}"></script>
+    <!-- wow JS
+        ============================================ -->
+    <script src="{% static 'Main/js/wow.min.js' %}"></script>
+    <!-- price-slider JS
+        ============================================ -->
+    <script src="{% static 'Main/js/jquery-price-slider.js' %}"></script>
+    <!-- owl.carousel JS
+        ============================================ -->
+    <script src="{% static 'Main/js/owl.carousel.min.js' %}"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="{% static 'Main/js/jquery.scrollUp.min.js' %}"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+    <script src="{% static 'Main/js/meanmenu/jquery.meanmenu.js' %}"></script>
+    <!-- counterup JS
+        ============================================ -->
+    <script src="{% static 'Main/js/counterup/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'Main/js/counterup/waypoints.min.js' %}"></script>
+    <script src="{% static 'Main/js/counterup/counterup-active.js' %}"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script src="{% static 'Main/js/scrollbar/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <!-- sparkline JS
+		============================================ -->
+        <script src="{% static 'Main/js/sparkline/jquery.sparkline.min.js' %}"></script>
+        <script src="{% static 'Main/js/sparkline/sparkline-active.js' %}"></script>
+    <!-- flot JS
+		============================================ -->
+        <script src="{% static 'Main/js/flot/jquery.flot.js' %}"></script>
+        <script src="{% static 'Main/js/flot/jquery.flot.resize.js' %}"></script>
+        <script src="{% static 'Main/js/flot/curvedLines.js' %}"></script>
+        <script src="{% static 'Main/js/flot/flot-active.js' %}"></script>
+    <!-- knob JS
+		============================================ -->
+        <script src="{% static 'Main/js/knob/jquery.knob.js' %}"></script>
+        <script src="{% static 'Main/js/knob/jquery.appear.js' %}"></script>
+        <script src="{% static 'Main/js/knob/knob-active.js' %}"></script>
+    <!--  wave JS
+		============================================ -->
+        <script src="{% static 'Main/js/wave/waves.min.js' %}"></script>
+        <script src="{% static 'Main/js/wave/wave-active.js' %}"></script>
+    <!--  animation JS
+		============================================ -->
+    <script src="{% static 'Main/js/animation/animation-active.js' %}"></script>
+    <!--  Chat JS
+        ============================================ -->
+        {% comment %} <script src="{% static 'Main/js/chat/moment.min.js' %}"></script>
+        <script src="{% static 'Main/js/chat/jquery.chat.js' %}"></script> {% endcomment %}
+    <!--  todo JS
+        ============================================ -->
+        <script src="{% static 'Main/js/todo/jquery.todo.js' %}"></script>
+        <!-- plugins JS
+            ============================================ -->
+        <script src="{% static 'Main/js/plugins.js' %}"></script>
+    <!-- 'Main JS
+        ============================================ -->
+    <script src="{% static 'Main/js/main.js' %}"></script>
+    <!-- tawk chat JS
+        ============================================ -->
+    {% comment %} <script src="{% static 'Main/js/tawk-chat.js' %}"></script> {% endcomment %}
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+countryName,continentName,continent
+Andorra,Europe,EU
+United Arab Emirates,Asia,AS
+Afghanistan,Asia,AS
+Antigua and Barbuda,North America,NA
+Anguilla,North America,NA
+Albania,Europe,EU
+Armenia,Asia,AS
+Angola,Africa,AF
+Antarctica,Antarctica,AN
+Argentina,South America,SA
+American Samoa,Oceania,OC
+Austria,Europe,EU
+Australia,Oceania,OC
+Aruba,North America,NA
+Åland,Europe,EU
+Azerbaijan,Asia,AS
+Bosnia and Herzegovina,Europe,EU
+Barbados,North America,NA
+Bangladesh,Asia,AS
+Belgium,Europe,EU
+Burkina Faso,Africa,AF
+Bulgaria,Europe,EU
+Bahrain,Asia,AS
+Burundi,Africa,AF
+Benin,Africa,AF
+Saint Barthélemy,North America,NA
+Bermuda,North America,NA
+Brunei,Asia,AS
+Bolivia,South America,SA
+Bonaire,North America,NA
+Brazil,South America,SA
+Bahamas,North America,NA
+Bhutan,Asia,AS
+Bouvet Island,Antarctica,AN
+Botswana,Africa,AF
+Belarus,Europe,EU
+Belize,North America,NA
+Canada,North America,NA
+Cocos [Keeling] Islands,Asia,AS
+Democratic Republic of the Congo,Africa,AF
+Central African Republic,Africa,AF
+Republic of the Congo,Africa,AF
+Switzerland,Europe,EU
+Ivory Coast,Africa,AF
+Cook Islands,Oceania,OC
+Chile,South America,SA
+Cameroon,Africa,AF
+China,Asia,AS
+Colombia,South America,SA
+Costa Rica,North America,NA
+Cuba,North America,NA
+Cape Verde,Africa,AF
+Curacao,North America,NA
+Christmas Island,Asia,AS
+Cyprus,Europe,EU
+Czech Republic,Europe,EU
+Germany,Europe,EU
+Djibouti,Africa,AF
+Denmark,Europe,EU
+Dominica,North America,NA
+Dominican Republic,North America,NA
+Algeria,Africa,AF
+Ecuador,South America,SA
+Estonia,Europe,EU
+Egypt,Africa,AF
+Western Sahara,Africa,AF
+Eritrea,Africa,AF
+Spain,Europe,EU
+Ethiopia,Africa,AF
+Finland,Europe,EU
+Fiji,Oceania,OC
+Falkland Islands,South America,SA
+Micronesia,Oceania,OC
+Faroe Islands,Europe,EU
+France,Europe,EU
+Gabon,Africa,AF
+United Kingdom,Europe,EU
+Grenada,North America,NA
+Georgia,Asia,AS
+French Guiana,South America,SA
+Guernsey,Europe,EU
+Ghana,Africa,AF
+Gibraltar,Europe,EU
+Greenland,North America,NA
+Gambia,Africa,AF
+Guinea,Africa,AF
+Guadeloupe,North America,NA
+Equatorial Guinea,Africa,AF
+Greece,Europe,EU
+South Georgia and the South Sandwich Islands,Antarctica,AN
+Guatemala,North America,NA
+Guam,Oceania,OC
+Guinea-Bissau,Africa,AF
+Guyana,South America,SA
+Hong Kong,Asia,AS
+Heard Island and McDonald Islands,Antarctica,AN
+Honduras,North America,NA
+Croatia,Europe,EU
+Haiti,North America,NA
+Hungary,Europe,EU
+Indonesia,Asia,AS
+Ireland,Europe,EU
+Israel,Asia,AS
+Isle of Man,Europe,EU
+India,Asia,AS
+British Indian Ocean Territory,Asia,AS
+Iraq,Asia,AS
+Iran,Asia,AS
+Iceland,Europe,EU
+Italy,Europe,EU
+Jersey,Europe,EU
+Jamaica,North America,NA
+Jordan,Asia,AS
+Japan,Asia,AS
+Kenya,Africa,AF
+Kyrgyzstan,Asia,AS
+Cambodia,Asia,AS
+Kiribati,Oceania,OC
+Comoros,Africa,AF
+Saint Kitts and Nevis,North America,NA
+North Korea,Asia,AS
+South Korea,Asia,AS
+Kuwait,Asia,AS
+Cayman Islands,North America,NA
+Kazakhstan,Asia,AS
+Laos,Asia,AS
+Lebanon,Asia,AS
+Saint Lucia,North America,NA
+Liechtenstein,Europe,EU
+Sri Lanka,Asia,AS
+Liberia,Africa,AF
+Lesotho,Africa,AF
+Lithuania,Europe,EU
+Luxembourg,Europe,EU
+Latvia,Europe,EU
+Libya,Africa,AF
+Morocco,Africa,AF
+Monaco,Europe,EU
+Moldova,Europe,EU
+Montenegro,Europe,EU
+Saint Martin,North America,NA
+Madagascar,Africa,AF
+Marshall Islands,Oceania,OC
+Macedonia,Europe,EU
+Mali,Africa,AF
+Myanmar [Burma],Asia,AS
+Mongolia,Asia,AS
+Macao,Asia,AS
+Northern Mariana Islands,Oceania,OC
+Martinique,North America,NA
+Mauritania,Africa,AF
+Montserrat,North America,NA
+Malta,Europe,EU
+Mauritius,Africa,AF
+Maldives,Asia,AS
+Malawi,Africa,AF
+Mexico,North America,NA
+Malaysia,Asia,AS
+Mozambique,Africa,AF
+Namibia,Africa,AF
+New Caledonia,Oceania,OC
+Niger,Africa,AF
+Norfolk Island,Oceania,OC
+Nigeria,Africa,AF
+Nicaragua,North America,NA
+Netherlands,Europe,EU
+Norway,Europe,EU
+Nepal,Asia,AS
+Nauru,Oceania,OC
+Niue,Oceania,OC
+New Zealand,Oceania,OC
+Oman,Asia,AS
+Panama,North America,NA
+Peru,South America,SA
+French Polynesia,Oceania,OC
+Papua New Guinea,Oceania,OC
+Philippines,Asia,AS
+Pakistan,Asia,AS
+Poland,Europe,EU
+Saint Pierre and Miquelon,North America,NA
+Pitcairn Islands,Oceania,OC
+Puerto Rico,North America,NA
+Palestine,Asia,AS
+Portugal,Europe,EU
+Palau,Oceania,OC
+Paraguay,South America,SA
+Qatar,Asia,AS
+Réunion,Africa,AF
+Romania,Europe,EU
+Serbia,Europe,EU
+Russia,Europe,EU
+Rwanda,Africa,AF
+Saudi Arabia,Asia,AS
+Solomon Islands,Oceania,OC
+Seychelles,Africa,AF
+Sudan,Africa,AF
+Sweden,Europe,EU
+Singapore,Asia,AS
+Saint Helena,Africa,AF
+Slovenia,Europe,EU
+Svalbard and Jan Mayen,Europe,EU
+Slovakia,Europe,EU
+Sierra Leone,Africa,AF
+San Marino,Europe,EU
+Senegal,Africa,AF
+Somalia,Africa,AF
+Suriname,South America,SA
+South Sudan,Africa,AF
+São Tomé and Príncipe,Africa,AF
+El Salvador,North America,NA
+Sint Maarten,North America,NA
+Syria,Asia,AS
+Swaziland,Africa,AF
+Turks and Caicos Islands,North America,NA
+Chad,Africa,AF
+French Southern Territories,Antarctica,AN
+Togo,Africa,AF
+Thailand,Asia,AS
+Tajikistan,Asia,AS
+Tokelau,Oceania,OC
+East Timor,Oceania,OC
+Turkmenistan,Asia,AS
+Tunisia,Africa,AF
+Tonga,Oceania,OC
+Turkey,Asia,AS
+Trinidad and Tobago,North America,NA
+Tuvalu,Oceania,OC
+Taiwan,Asia,AS
+Tanzania,Africa,AF
+Ukraine,Europe,EU
+Uganda,Africa,AF
+U.S. Minor Outlying Islands,Oceania,OC
+United States,North America,NA
+Uruguay,South America,SA
+Uzbekistan,Asia,AS
+Vatican City,Europe,EU
+Saint Vincent and the Grenadines,North America,NA
+Venezuela,South America,SA
+British Virgin Islands,North America,NA
+U.S. Virgin Islands,North America,NA
+Vietnam,Asia,AS
+Vanuatu,Oceania,OC
+Wallis and Futuna,Oceania,OC
+Samoa,Oceania,OC
+Kosovo,Europe,EU
+Yemen,Asia,AS
+Mayotte,Africa,AF
+South Africa,Africa,AF
+Zambia,Africa,AF
+Zimbabwe,Africa,AF
+,,

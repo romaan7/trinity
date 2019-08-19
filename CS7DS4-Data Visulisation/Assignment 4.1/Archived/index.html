@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Meta Tag -->
+      <meta charset="utf-8">
+      <title>Syrian Refugees</title>
+      <!-- CSS Stylesheet -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">
+      
+   </head>
+   
+   <body>
+   
+      <div id="preloader" class="row col-xs-12 col-md-12 text-center subtitle-name fadeOnLoad5" style="font-size: 1.5em">
+      <br/>
+      <span><i class="fa fa-spinner fa-3x fa-spin" style="color: grey; margin: 10px;"></i></span><br/>
+      <span style="color: grey">Data is loading.</span><br/>
+      </div>
+                
+                
+
+      <h1>
+         <center>Visualizing Syrian Refugees Crysis</center>
+      </h1>
+      <div class="top-intro">
+      <p>Syria has been a country in constant conflict of civil war for the past seven years. With different groups trying to seize control over the country like IS and anti-government groups forming the situation is worsening day by day. Crowded cities have been destroyed and horrific human rights violations are widespread. Basic necessities like food and medical care are sparse. The country is turning uninhabitable with lack of basic amenities. People are looking for ways out of the country.</p>
+      
+      <p>The U.N. estimates that 6.2 million people are internally displaced <a href="https://www.unhcr.org/sy/internally-displaced-people">[1]</a>. When you also consider refugees, well over half of the country’s pre-war population of 22 million is in need of urgent humanitarian assistance, whether they still remain in the country or have escaped across the borders. Let us have a look over statics for the past few years and try to understand the situation.</p>
+
+      </div>
+      
+      
+ <!-- FORCE CHART START -->
+      <div id="refugeeForce" class="refugeeForce rcorners2">
+            <h2>Where do the refegues find asylum.?</h2>
+            <p class="intro-para">
+            The current civil war climate has made the country inhabitable and the people have started to move out of the country to survive for their livelihood. The Force chart visualized below is an appropriate depiction of the data. Each circle in the chart displays the country and the number of refugees that have immigrated. With the current climate in the country, we infer that most of the people have immigrated into continents that are sharing borders. Each new diagram represents the data for the year between 2010 and 2014. When clicked on 'Above 1000' the navigation menu on the top left, the view only highlights the countries with Refugees above 1000. When clicked on 'Continent' the view updates the timeline to break down the data based on the continents.
+            </p>
+            
+      <ul class="navbar">
+         <center>
+            <li id="Refugees"  style="background-color: orange" class="navbar-item" onclick="grossClick(this)">All Countries</li>
+            <li id="Split" class="navbar-item" onclick="splitClick(this)">Above 1000</li>
+            <li id="Continent"  class="navbar-item" onclick="genreClick(this)">Continent</li>
+         </center>
+      </ul>
+
+      </div>
+ <!-- FORCE CHART END---->
+
+ <!-- STACKED CHART START -->
+                        <div class="rcorners2" align="left">
+                                                    <h2>Who are the Actors ?</h2>
+            <p class="actors-right">Over time, as the Syrian conflict grew in scale and complexity, there was a shift in the main actors involved in reported violence. We use media data to connect violence events among different actors, and to explore how they shifted over time.<br><br>
+
+44% of reported violent events includethe Government / Military as a source.<br><br>
+
+Who are the targets of these actors?<br><br>
+
+If you select the filter for data type as Target from the selector , we can see who were targate by the actors.
+As we can see Civilians /Protestors were targeted at the higest at 27%, followe by rebles at 22%.<br><br>
+
+<br><br>
+
+</p>
+
+                            <div id="actorStacked">
+
+                            </div>
+                        </div>
+ <!-- STACKED CHART END-->
+ 
+ 
+  <!-- MAP CHART START-->
+                  <div class="area-chart rcorners2">
+                  <h2>Major migrations...</h2>
+            <p class="intro-para">Due to international intervention and acceptance of Syrian citizens around 11 million Syrian emigrants have found asylum in different countries over the past years. Between the years 2012 to 2016, there has been a considerable spike in the magnitude of Syrian emigrants being accepted in some of the top countries. </p>
+            
+            <p class="intro-para">Below is the chart that reflects intake over 5 years in the locations of refugee camps in these top countries [ Joran, Iran , Turkey, Lebanon, Egypt ]</p>
+                    <div class="col-xs-12 col-md-7">
+                        <div id="refugeemap"></div>
+                    </div>
+                    <div class="col-xs-12 col-md-5">
+                        <div id="refugeeStackedbuttons">
+                            <div class="btn-group" role="group" id="refugeeStackedbuttons2">
+                                <input type="button" class="btn" id="level_1" value="By country">
+                                <input type="button" class="btn" id="level_3" value="By refugee camp">
+                            </div>
+                        </div>
+                        <br/>
+                        <div id="refugeestacked"></div>
+                    </div>
+                    <p class="intro-para"></p>
+                   </div>
+<!-- MAP CHART END-->
+
+
+      <!-- General libraries -->
+      <script src="js/library/jquery.min.js"></script>
+      <script src="js/library/queue.min.js"></script>
+      <script src="js/library/d3.min.js"></script>
+      <script src="js/library/d3.v3.js"></script>      
+      <script src="js/library/colorbrewer.js"></script>
+      <script src="js/library/select.js"></script>
+      <script src="js/library/plot-transform.js"></script>
+      <script src="js/library/bootstrap.min.js"></script>
+      <script src="js/library/topojson.min.js"></script>
+      
+      <!-- Visualizations-->
+      <script src="js/RefugeeForce.js"></script>
+      <script src="js/ActorStacked.js"></script>
+      <script src="js/RefugeeMap.js"></script>
+      <script src="js/RefugeeStacked.js"></script>
+      
+      <!-- Load data, load visualizations (needs to go after "Visualizations") -->
+      <script src="js/main.js"></script>
+      
+ <!-- FOOTER START-->
+<div class="footer">
+      <div class="footer-block">
+      <h4>Data sources</h4>
+      <a href="http://popstats.unhcr.org/en/persons_of_concern" class="footer-link">&#8226; UNHCR: <i style="font-size:10px;">The UN operational portal for Refugee Response</i></a>
+      <a href="http://data.worldbank.org/indicator/SP.POP.TOTL?page=1" class="footer-link">&#8226; World Bank: <i style="font-size:10px;">for population data on contries</i></a>
+      <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/28075" class="footer-link">&#8226; Harvard Datavers : <i style="font-size:10px;">for event Data related to incidents in news.</i></a>
+      </div>
+      
+      <div class="footer-block">
+      <h4>Technologies</h4>
+      <a href="https://d3js.org/" class="footer-link">&#8226; d3.js</a>
+      <a href="https://plot.ly/javascript/" class="footer-link">&#8226; plot-transform.js</a>
+      <a href="https://github.hubspot.com/select/docs/welcome/" class="footer-link">&#8226; queue.min.js</a>
+      </div>
+
+</div>
+      <h4 style="color:#FFF;text-align:center;">Submitted by Roman Shaikh as assignment-4 for CS7DS4-Data Visualization</h4>
+<!-- FOOTER END---->
+   </body>
+   
+   
+</html>

@@ -1,0 +1,3 @@
+python manage.py loaddata load_station_codes.json  # loads initial data for irish rail module
+
+install xmljson

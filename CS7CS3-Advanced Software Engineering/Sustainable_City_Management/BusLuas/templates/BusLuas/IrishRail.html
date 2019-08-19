@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Visualisation</title>
+    {% load static %}
+    <!-- <link rel='stylesheet' type='text/css' href='style.css'>
+    <script src="main.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script> 
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    {% comment %} <script src="https://cdn.datatables.net/1.10.19/js/dataTables.jqueryui.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.jqueryui.min.css"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" /> {% endcomment %}
+    <!-- favicon
+		============================================ -->
+    {% comment %} <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"> {% endcomment %}
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/bootstrap.min.css' %}">
+    <!-- font awesome CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/font-awesome.min.css' %}">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'Main/css/owl.theme.css' %}">
+    <link rel="stylesheet" href="{% static 'Main/css/owl.transitions.css' %}">
+    <!-- meanmenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/meanmenu/meanmenu.min.css' %}">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/animate.css' %}">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/normalize.css' %}">
+	<!-- wave CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/wave/waves.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Main/css/wave/button.css' %}">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/scrollbar/jquery.mCustomScrollbar.min.css' %}">
+    <!-- Notika icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/notika-custom-icon.css' %}">
+    <!-- Data Table JS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/jquery.dataTables.min.css' %}">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/main.css' %}">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/style.css' %}">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'Main/css/responsive.css' %}">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="{% static 'Main/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    
+<style>
+.table-responsive
+{
+
+    overflow-y: hidden !important;
+    height: 625px;
+    margin-left : 10px!important;
+    margin-right : 10px!important;
+}
+</style>
+
+</head>
+<body>
+<div class="data-table-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="data-table-list">
+                        <div class="basic-tb-hd">
+                            <p>To search for a specific train or route, use the search box at the top of the table or the search box below every column name</p>
+                            
+                        </div>
+                        <div class="table-responsive">
+    <table id="data-table-basic" class="table table-striped">
+        <thead>
+            <tr>
+                <th class="third">Train Code</th>
+                <th>Train Date</th>
+                <th class="third">Station Code</th>
+                <th class="third">Station</th>
+                <th class="third">Origin</th>
+                <th class="third">Destination</th>
+                <th>Due In</th>
+                <th class="third">Arrvial</th>
+                <th class="third">Depart</th>
+                <th class="third">Direction</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr></tr>
+        </tfoot>
+    </table>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#data-table-basic').DataTable({
+                "ajax": {
+                    "url": "/BusLuas/IrishRailData",
+                    "type": "GET",
+                    "dataSrc":""
+                },
+                "columns": [
+                    { "data": "TrainCode" },
+                    { "data": "TrainDate"},
+                    { "data": "StationCode" },
+                    { "data": "StationFullName" },
+                    { "data": "Origin" },
+                    { "data": "Destination" },
+                    { "data": "DueIn" },
+                    { "data": "ExpArrival" },
+                    { "data": "ExpDepart" },
+                    { "data": "Direction" },
+
+                ],
+                initComplete: function () {
+                    this.api().columns().every(function () {
+                        var column = this;
+                        var select = $('<select><option value=""></option></select>')
+                            .appendTo($(column.header()))
+                            .on('change', function () {
+                                var val = $.fn.dataTable.util.escapeRegex(
+                                    $(this).val()
+                                );
+
+                                column
+                                    .search(val ? '^' + val + '$' : '', true, false)
+                                    .draw();
+                            });
+
+                        column.data().unique().sort().each(function (d, j) {
+                            select.append('<option value="' + d + '">' + d + '</option>')
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

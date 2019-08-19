@@ -1,0 +1,777 @@
+Year,Country,Population,Refugee,Continent
+2008,Afghanistan,26528741,,Asia
+2010,Afghanistan,27962207,,Asia
+2012,Afghanistan,29726803,1,Asia
+2014,Afghanistan,31627506,,Asia
+2008,Albania,2947314,,Europe
+2010,Albania,2913021,,Europe
+2012,Albania,2900489,0,Europe
+2014,Albania,2894475,,Europe
+2008,Algeria,34811059,,Africa
+2010,Algeria,36036159,,Africa
+2012,Algeria,37439427,0,Africa
+2014,Algeria,38934334,0,Africa
+2008,Angola,19842251,,Africa
+2010,Angola,21219954,,Africa
+2012,Angola,22685632,0,Africa
+2014,Angola,24227524,,Africa
+2008,Antigua/Barbuda,85350,,North America
+2010,Antigua/Barbuda,87233,,North America
+2012,Antigua/Barbuda,89069,,North America
+2014,Antigua/Barbuda,90900,,North America
+2008,Argentina,40381860,,South America
+2010,Argentina,41222875,,South America
+2012,Argentina,42095224,40,South America
+2014,Argentina,42980026,233,South America
+2008,Armenia,2975029,,Asia
+2010,Armenia,2963496,,Asia
+2012,Armenia,2978339,136,Asia
+2014,Armenia,3006154,14994,Asia
+2008,Aruba,101342,,North America
+2010,Aruba,101597,,North America
+2012,Aruba,102393,,North America
+2014,Aruba,103441,,North America
+2008,Australia,21249200,74,Oceania
+2010,Australia,22031750,68,Oceania
+2012,Australia,22728254,204,Oceania
+2014,Australia,23470118,302,Oceania
+2008,Austria,8321496,333,Europe
+2010,Austria,8363404,505,Europe
+2012,Austria,8429991,1675,Europe
+2014,Austria,8545908,2748,Europe
+2008,Azerbaijan,8763400,,Asia
+2010,Azerbaijan,9054332,,Asia
+2012,Azerbaijan,9295784,3,Asia
+2014,Azerbaijan,9535079,7,Asia
+2008,Bahamas,348587,,North America
+2010,Bahamas,360830,,North America
+2012,Bahamas,372388,,North America
+2014,Bahamas,383054,,North America
+2008,Bahrain,1115777,,Asia
+2010,Bahrain,1261319,,Asia
+2012,Bahrain,1333577,0,Asia
+2014,Bahrain,1361930,,Asia
+2008,Bangladesh,148252473,,Asia
+2010,Bangladesh,151616777,,Asia
+2012,Bangladesh,155257387,,Asia
+2014,Bangladesh,159077513,,Asia
+2008,Barbados,277315,,North America
+2010,Barbados,279566,,North America
+2012,Barbados,281580,,North America
+2014,Barbados,283380,,North America
+2008,Belarus,9528000,,Europe
+2010,Belarus,9490000,,Europe
+2012,Belarus,9464000,0,Europe
+2014,Belarus,9470000,72,Europe
+2008,Belgium,10709973,152,Europe
+2010,Belgium,10895586,229,Europe
+2012,Belgium,11128246,355,Europe
+2014,Belgium,11231213,2620,Europe
+2008,Belize,306165,,North America
+2010,Belize,321609,,North America
+2012,Belize,336707,,North America
+2014,Belize,351706,,North America
+2008,Benin,8973525,1,Africa
+2010,Benin,9509798,1,Africa
+2012,Benin,10049792,1,Africa
+2014,Benin,10598482,,Africa
+2008,Bhutan,694990,,Asia
+2010,Bhutan,720246,,Asia
+2012,Bhutan,743711,,Asia
+2014,Bhutan,765008,,Asia
+2008,Bolivia,9599916,,South America
+2010,Bolivia,9918245,0,South America
+2012,Bolivia,10238762,,South America
+2014,Bolivia,10238762,6,South America
+2008,Bonaire,,,North America
+2010,Bonaire,,,North America
+2012,Bonaire,,,North America
+2014,Bonaire,,,North America
+2008,Bosnia and Herzegovina,3839749,1,Europe
+2010,Bosnia and Herzegovina,3835258,1,Europe
+2012,Bosnia and Herzegovina,3828419,5,Europe
+2014,Bosnia and Herzegovina,3817554,25,Europe
+2008,Botswana,1967866,,Africa
+2010,Botswana,2047831,,Africa
+2012,Botswana,2132822,,Africa
+2014,Botswana,2219937,,Africa
+2008,Brazil,194769696,5,South America
+2010,Brazil,198614208,5,South America
+2012,Brazil,202401584,42,South America
+2014,Brazil,206077898,1739,South America
+2008,British Virgin Islands,,,North America
+2010,British Virgin Islands,,,North America
+2012,British Virgin Islands,,,North America
+2014,British Virgin Islands,,,North America
+2008,Brunei Darussalam,380786,,Asia
+2010,Brunei Darussalam,393302,,Asia
+2012,Brunei Darussalam,405512,,Asia
+2014,Brunei Darussalam,417394,,Asia
+2008,Bulgaria,7492561,86,Europe
+2010,Bulgaria,7395599,95,Europe
+2012,Bulgaria,7305888,97,Europe
+2014,Bulgaria,7223938,8501,Europe
+2008,Burkina Faso,14709011,,Africa
+2010,Burkina Faso,15632066,,Africa
+2012,Burkina Faso,16590813,,Africa
+2014,Burkina Faso,17589198,,Africa
+2014,Burundi,10816860,,Africa
+2008,Burundi ,14709011,,Africa
+2010,Burundi ,9461117,,Africa
+2012,Burundi ,10124572,,Africa
+2008,Cabo Verde,483824,,Africa
+2010,Cabo Verde,490379,,Africa
+2012,Cabo Verde,500870,,Africa
+2014,Cabo Verde,513906,,Africa
+2008,Cambodia,13933660,,Asia
+2010,Cambodia,14363586,,Asia
+2012,Cambodia,14832255,0,Asia
+2014,Cambodia,15328136,0,Asia
+2008,Cameroon,19570418,,Africa
+2010,Cameroon,20590666,,Africa
+2012,Cameroon,21659488,1,Africa
+2014,Cameroon,22773014,,Africa
+2008,Canada,33245773,603,North America
+2010,Canada,34005274,545,North America
+2012,Canada,34751476,533,North America
+2014,Canada,35543658,705,North America
+2008,Cayman Islands,52925,,North America
+2010,Cayman Islands,55509,,North America
+2012,Cayman Islands,57522,,North America
+2014,Cayman Islands,59172,,North America
+2008,Central African Rep.,4280405,,Africa
+2010,Central African Rep.,4444973,,Africa
+2012,Central African Rep.,4619500,,Africa
+2014,Central African Rep.,4619500,0,Africa
+2008,Chad,11139740,,Africa
+2010,Chad,11896380,1,Africa
+2012,Chad,12715465,4,Africa
+2014,Chad,13587053,15,Africa
+2008,Chile,16645940,,South America
+2010,Chile,17015048,,South America
+2012,Chile,17388437,0,South America
+2014,Chile,17762647,6,South America
+2008,China,1324655000,0,Asia
+2010,China,1337705000,,Asia
+2012,China,1350695000,,Asia
+2014,China,1364270000,5,Asia
+2008,"China, Hong Kong SAR",6957800,,Asia
+2010,"China, Hong Kong SAR",7024200,,Asia
+2012,"China, Hong Kong SAR",7154600,0,Asia
+2014,"China, Hong Kong SAR",7241700,0,Asia
+2008,"China, Macao SAR",507274,,Asia
+2010,"China, Macao SAR",534626,0,Asia
+2012,"China, Macao SAR",557763,0,Asia
+2014,"China, Macao SAR",577914,0,Asia
+2008,Colombia,44901660,,South America
+2010,Colombia,45918101,,South America
+2012,Colombia,46881018,1,South America
+2014,Colombia,47791393,,South America
+2008,Comoros,665414,,Africa
+2010,Comoros,698695,,Africa
+2012,Comoros,733661,,Africa
+2014,Comoros,769991,,Africa
+2008,Congo,3832771,,Africa
+2010,Congo,4066078,,Africa
+2012,Congo,70291160,,Africa
+2014,Congo,4504962,,Africa
+2008,Costa Rica,4429506,,North America
+2010,Costa Rica,4545273,,North America
+2012,Costa Rica,4654148,0,North America
+2014,Costa Rica,4757606,5,North America
+2008,Cote d'Ivoire,19261647,,Africa
+2010,Cote d'Ivoire,20131707,,Africa
+2012,Cote d'Ivoire,21102641,,Africa
+2014,Cote d'Ivoire,22157107,,Africa
+2008,Croatia,4434508,,Europe
+2010,Croatia,4417781,0,Europe
+2012,Croatia,4267558,12,Europe
+2014,Croatia,4238389,22,Europe
+2008,Cuba,11290239,,North America
+2010,Cuba,11308133,,North America
+2012,Cuba,11342631,11,North America
+2014,Cuba,11379111,20,North America
+2014,Cura̤ao,152088,,North America
+2008,Curacao,145880,,North America
+2010,Curacao,148703,,North America
+2012,Curacao,152088,,North America
+2014,Curacao,155909,,North America
+2008,Cyprus,1077010,70,Europe
+2010,Cyprus,1103685,125,Europe
+2012,Cyprus,1129303,139,Europe
+2014,Cyprus,1153658,1451,Europe
+2010,Czech Rep.,10474410,23,Europe
+2012,Czech Rep.,10510785,54,Europe
+2014,Czech Rep.,10525347,236,Europe
+2008,Czech Rep.,10380000,16,Europe
+2008,Dem Rep of the Congo,61809278,,Africa
+2010,Dem Rep of the Congo,65938712,0,Africa
+2012,Dem Rep of the Congo,,,Africa
+2014,Dem Rep of the Congo,4286188,0,Africa
+2008,Denmark,5493621,272,Europe
+2010,Denmark,5547683,750,Europe
+2012,Denmark,5591572,1903,Europe
+2014,Denmark,5638530,7253,Europe
+2008,Dijbouti,,,Africa
+2010,Dijbouti,,,Africa
+2012,Dijbouti,,,Africa
+2014,Djibouti,876174,0,Africa
+2008,Dominican Rep.,9636491,,North America
+2010,Dominican Rep.,9897983,,North America
+2012,Dominican Rep.,71685,7,North America
+2014,Dominican Rep.,10405943,,North America
+2008,Ecuador,14447600,10,South America
+2010,Ecuador,14934692,9,South America
+2012,Ecuador,15419493,11,South America
+2014,Ecuador,15902916,13,South America
+2008,Egypt,75490000,9,Africa
+2010,Egypt,82040994,8,Africa
+2012,Egypt,85660902,12836,Africa
+2014,Egypt,89579670,138381,Africa
+2008,El Salvador,6004199,,North America
+2010,El Salvador,6038306,,North America
+2012,El Salvador,6072233,,North America
+2014,El Salvador,6107706,,North America
+2008,Equatorial Guinea,686223,,Africa
+2010,Equatorial Guinea,728710,,Africa
+2012,Equatorial Guinea,773729,,Africa
+2014,Equatorial Guinea,820885,,Africa
+2008,Eritrea,4500638,,Africa
+2010,Eritrea,4689664,,Africa
+2012,Eritrea,4892233,,Africa
+2014,Eritrea,5110444,,Africa
+2008,Estonia,1337090,,Europe
+2010,Estonia,1331475,,Europe
+2012,Estonia,1322696,,Europe
+2014,Estonia,1314545,6,Europe
+2008,Ethiopia,83079608,,Africa
+2010,Ethiopia,87561814,,Africa
+2012,Ethiopia,92191211,,Africa
+2014,Ethiopia,96958732,0,Africa
+2008,Fiji,843206,,Oceania
+2010,Fiji,859952,,Oceania
+2012,Fiji,874158,,Oceania
+2014,Fiji,886450,,Oceania
+2008,Finland,5313399,50,Europe
+2010,Finland,5363352,59,Europe
+2012,Finland,5413971,218,Europe
+2014,Finland,5461512,438,Europe
+2008,France,64374990,233,Europe
+2010,France,65027512,280,Europe
+2012,France,65639975,640,Europe
+2014,France,66217509,2882,Europe
+2008,French Guiana,,,South America
+2010,French Guiana,,,South America
+2012,French Guiana,,,South America
+2014,French Guiana,,,South America
+2008,Gabon,1473741,,Africa
+2010,Gabon,1541936,,Africa
+2012,Gabon,1613489,,Africa
+2014,Gabon,1687673,0,Africa
+2008,Gambia,1586749,,Africa
+2010,Gambia,1693002,,Africa
+2012,Gambia,1807108,,Africa
+2014,Gambia,1928201,,Africa
+2008,Georgia,4030000,,Asia
+2010,Georgia,3926000,,Asia
+2012,Georgia,3825000,141,Asia
+2014,Georgia,3727000,471,Asia
+2008,Germany,82110097,8205,Europe
+2010,Germany,81776930,10518,Europe
+2012,Germany,80425823,18165,Europe
+2014,Germany,80970732,40994,Europe
+2008,Ghana,23115919,,Africa
+2010,Ghana,24317734,,Africa
+2012,Ghana,25544565,0,Africa
+2014,Ghana,26786598,5,Africa
+2008,Greece,11077841,39,Europe
+2010,Greece,11121341,16,Europe
+2012,Greece,11045011,20,Europe
+2014,Greece,10869637,3913,Europe
+2008,Grenada,103934,,North America
+2010,Grenada,104677,,North America
+2012,Grenada,105476,,North America
+2014,Grenada,106349,,North America
+2008,Guatemala,14106687,,North America
+2010,Guatemala,14732261,,North America
+2012,Guatemala,15368759,,North America
+2014,Guatemala,16015494,,North America
+2008,Guinea,10427356,,Africa
+2010,Guinea,11012406,,Africa
+2012,Guinea,11628767,,Africa
+2014,Guinea,12275527,,Africa
+2008,Guinea-Bissau,1561293,,Africa
+2010,Guinea-Bissau,1634196,,Africa
+2012,Guinea-Bissau,1714620,,Africa
+2014,Guinea-Bissau,1800513,,Africa
+2008,Guyana,748096,,South America
+2010,Guyana,753362,,South America
+2012,Guyana,758410,,South America
+2014,Guyana,763893,,South America
+2008,Haiti,9705130,,North America
+2010,Haiti,9999617,,North America
+2012,Haiti,10288828,,North America
+2014,Haiti,10572029,,North America
+2008,Honduras,7259470,,North America
+2010,Honduras,7503875,,North America
+2012,Honduras,7736131,,North America
+2014,Honduras,7961680,,North America
+2008,Hungary,10038188,44,Europe
+2010,Hungary,10000023,39,Europe
+2012,Hungary,9920362,86,Europe
+2014,Hungary,9863183,334,Europe
+2008,Iceland,317414,1,Europe
+2010,Iceland,318041,1,Europe
+2012,Iceland,320716,2,Europe
+2014,Iceland,327386,7,Europe
+2008,India,1197070109,0,Asia
+2010,India,1230984504,,Asia
+2012,India,1263589639,6,Asia
+2014,India,1295291543,27,Asia
+2008,Indonesia,235360765,,Asia
+2010,Indonesia,241613126,,Asia
+2012,Indonesia,248037853,5,Asia
+2014,Indonesia,254454778,43,Asia
+2008,Iran (Islamic Rep. of),72530693,,Asia
+2010,Iran (Islamic Rep. of),74253373,0,Asia
+2012,Iran (Islamic Rep. of),76156975,,Asia
+2014,Iran (Islamic Rep. of),78143644,,Asia
+2008,Iraq,29163327,534,Asia
+2010,Iraq,30868156,254,Asia
+2012,Iraq,32780975,63586,Asia
+2014,Iraq,34812326,234196,Asia
+2008,Ireland,4489544,36,Europe
+2010,Ireland,4560155,34,Europe
+2012,Ireland,4586897,38,Europe
+2014,Ireland,4615693,176,Europe
+2008,Israel,7308800,1,Asia
+2010,Israel,7623600,,Asia
+2012,Israel,7910500,,Asia
+2014,Israel,8215700,,Asia
+2008,Italy,58826731,110,Europe
+2010,Italy,59277417,211,Europe
+2012,Italy,59539717,445,Europe
+2014,Italy,60789140,1144,Europe
+2008,Jamaica,2671934,,North America
+2010,Jamaica,2690824,,North America
+2012,Jamaica,2707805,,North America
+2014,Jamaica,2720554,,North America
+2008,Japan,128063000,,Asia
+2010,Japan,128070000,,Asia
+2012,Japan,127561489,0,Asia
+2014,Japan,127131800,41,Asia
+2008,Jordan,5786000,44,Asia
+2010,Jordan,6046000,198,Asia
+2012,Jordan,6318000,238798,Asia
+2014,Jordan,6607000,623112,Asia
+2008,Kazakhstan,15674000,,Asia
+2010,Kazakhstan,16321581,,Asia
+2012,Kazakhstan,16791425,0,Asia
+2014,Kazakhstan,17289224,14,Asia
+2008,Kenya,38244442,,Africa
+2010,Kenya,40328313,,Africa
+2012,Kenya,42542978,,Africa
+2014,Kenya,44863583,0,Africa
+2008,Kuwait,2705290,0,Asia
+2010,Kuwait,3059473,4,Asia
+2012,Kuwait,3419581,15,Asia
+2014,Kuwait,3753121,15,Asia
+2008,Kyrgyzstan,5318700,4,Asia
+2010,Kyrgyzstan,5447900,11,Asia
+2012,Kyrgyzstan,5607200,7,Asia
+2014,Kyrgyzstan,5835500,56,Asia
+2008,Lao People's Dem Rep,6045439,,Asia
+2010,Lao People's Dem Rep,6260544,,Asia
+2012,Lao People's Dem Rep,6473050,,Asia
+2014,Lao People's Dem Rep,6689300,,Asia
+2008,Latvia,2177322,0,Europe
+2010,Latvia,2097555,,Europe
+2012,Latvia,2034319,17,Europe
+2014,Latvia,1993782,52,Europe
+2008,Lebanon,4109389,84,Asia
+2010,Lebanon,4337156,64,Asia
+2012,Lebanon,4440728,126939,Asia
+2014,Lebanon,4546774,1147494,Asia
+2008,Lesotho,1972194,,Africa
+2010,Lesotho,2010586,,Africa
+2012,Lesotho,2057331,,Africa
+2014,Lesotho,2109197,,Africa
+2008,Liberia,3672782,,Africa
+2010,Liberia,3957990,,Africa
+2012,Liberia,4440728,,Africa
+2014,Liberia,4396554,6,Africa
+2008,Libya,6123022,0,Africa
+2010,Libya,6265697,,Africa
+2012,Libya,6283403,0,Africa
+2014,Libya,6258984,18653,Africa
+2008,Liechtenstein,35721,,Europe
+2010,Liechtenstein,36276,,Europe
+2012,Liechtenstein,36791,,Europe
+2014,Liechtenstein,37286,5,Europe
+2008,Lithuania,3198231,3,Europe
+2010,Lithuania,3097282,3,Europe
+2012,Lithuania,2987773,5,Europe
+2014,Lithuania,2932367,20,Europe
+2008,Luxembourg,488650,,Europe
+2010,Luxembourg,506953,0,Europe
+2012,Luxembourg,530946,,Europe
+2014,Luxembourg,556319,59,Europe
+2008,Madagascar,19926798,,Africa
+2010,Madagascar,21079532,,Africa
+2012,Madagascar,22293720,,Africa
+2014,Madagascar,23571713,,Africa
+2008,Malawi,13904671,,Africa
+2010,Malawi,14769824,,Africa
+2012,Malawi,15700436,,Africa
+2014,Malawi,16695253,,Africa
+2008,Malaysia,27197419,,Asia
+2010,Malaysia,28119500,0,Asia
+2012,Malaysia,29021940,4,Asia
+2014,Malaysia,29901997,447,Asia
+2008,Mali,14223403,,Africa
+2010,Mali,15167286,,Africa
+2012,Mali,16112333,,Africa
+2014,Mali,17086022,16,Africa
+2008,Malta,409379,11,Europe
+2010,Malta,414508,33,Europe
+2012,Malta,419455,191,Europe
+2014,Malta,427364,1047,Europe
+2008,Mauritania,3414552,,Africa
+2010,Mauritania,3591400,,Africa
+2012,Mauritania,3777067,,Africa
+2014,Mauritania,3969625,41,Africa
+2008,Mauritius,1244121,,Africa
+2010,Mauritius,1250400,,Africa
+2012,Mauritius,1255882,,Africa
+2014,Mauritius,1260934,,Africa
+2008,Mexico,114972821,,North America
+2010,Mexico,118617542,,North America
+2012,Mexico,122070963,2,North America
+2014,Mexico,125385833,13,North America
+2008,Microneesia (Federate States Of),104472,,Oceania
+2010,Microneesia (Federate States Of),103619,,Oceania
+2012,Microneesia (Federate States Of),103516,,Oceania
+2014,Microneesia (Federate States Of),104044,,Oceania
+2008,Monaco,35731,,Europe
+2010,Monaco,36845,,Europe
+2012,Monaco,37404,,Europe
+2014,Monaco,37623,,Europe
+2008,Mongolia,2629666,,Asia
+2010,Mongolia,2712657,,Asia
+2012,Mongolia,2808339,,Asia
+2014,Mongolia,2909871,,Asia
+2008,Montenegro,616969,,Europe
+2010,Montenegro,619428,,Europe
+2012,Montenegro,620601,0,Europe
+2014,Montenegro,621810,0,Europe
+2008,Montserrat,,,North America
+2010,Montserrat,,,North America
+2012,Montserrat,,,North America
+2014,Montserrat,,,North America
+2008,Morocco,31350544,,Africa
+2010,Morocco,32107739,,Africa
+2012,Morocco,32984190,0,Africa
+2014,Morocco,33921203,647,Africa
+2008,Mozambique,22994867,,Africa
+2010,Mozambique,24321457,,Africa
+2012,Mozambique,25732928,,Africa
+2014,Mozambique,27216276,,Africa
+2008,Myanmar,51030006,,Asia
+2010,Myanmar,51733013,,Asia
+2012,Myanmar,52543841,,Asia
+2014,Myanmar,53437159,,Asia
+2008,Namibia,2115703,,Africa
+2010,Namibia,2193643,,Africa
+2012,Namibia,2291645,,Africa
+2014,Namibia,2402858,,Africa
+2008,Nauru,,,Oceania
+2010,Nauru,,,Oceania
+2012,Nauru,,,Oceania
+2014,Nauru,9488,0,Oceania
+2008,Nepal,26325183,,Asia
+2010,Nepal,26875910,,Asia
+2012,Nepal,27500515,,Asia
+2014,Nepal,28174724,,Asia
+2008,Netherlands,16445593,1326,Europe
+2010,Netherlands,16615394,1186,Europe
+2012,Netherlands,16754962,1449,Europe
+2014,Netherlands,16865008,8692,Europe
+2008,New Zealand,4259800,33,Oceania
+2010,New Zealand,4350700,36,Oceania
+2012,New Zealand,4408100,41,Oceania
+2014,New Zealand,4509700,48,Oceania
+2008,Nicaragua,5594524,,North America
+2010,Nicaragua,5737722,,North America
+2012,Nicaragua,5877034,,North America
+2014,Nicaragua,6013913,,North America
+2008,Niger,242546,,Africa
+2010,Niger,16291990,,Africa
+2012,Niger,17635782,0,Africa
+2014,Niger,19113728,6,Africa
+2008,Nigeria,151115683,,Africa
+2010,Nigeria,159424742,,Africa
+2012,Nigeria,168240403,0,Africa
+2014,Nigeria,177475986,11,Africa
+2008,Norway,4768212,154,Europe
+2010,Norway,4889252,186,Europe
+2012,Norway,5018573,565,Europe
+2014,Norway,5136886,2568,Europe
+2008,Oman,2652281,7,Asia
+2010,Oman,2943747,7,Asia
+2012,Oman,3545192,7,Asia
+2014,Oman,4236057,7,Asia
+2008,Pakistan,163096985,8,Asia
+2010,Pakistan,170043918,8,Asia
+2012,Pakistan,177392252,11,Asia
+2014,Pakistan,185044286,16,Asia
+2008,Palau,20227,,Oceania
+2010,Palau,20470,,Oceania
+2012,Palau,20756,,Oceania
+2014,Palau,21097,,Oceania
+2008,Panama,3498679,,North America
+2010,Panama,3620506,,North America
+2012,Panama,3743761,,North America
+2014,Panama,3867535,,North America
+2008,Papua New Guinea,6540267,,Oceania
+2010,Papua New Guinea,6847517,,Oceania
+2012,Papua New Guinea,7154870,,Oceania
+2014,Papua New Guinea,7463577,,Oceania
+2008,Paraguay,6047131,,South America
+2010,Paraguay,6209877,,South America
+2012,Paraguay,6379162,,South America
+2014,Paraguay,6552518,7,South America
+2008,Peru,28642048,0,South America
+2010,Peru,29373644,,South America
+2012,Peru,30158768,,South America
+2014,Peru,30973148,20,South America
+2008,Philippines,90297115,,Asia
+2010,Philippines,93038902,,Asia
+2012,Philippines,96017322,0,Asia
+2014,Philippines,99138690,19,Asia
+2008,Poland,38125759,8,Europe
+2010,Poland,38042794,8,Europe
+2012,Poland,38063164,17,Europe
+2014,Poland,38011735,240,Europe
+2008,Portugal,10558177,,Europe
+2010,Portugal,10573100,,Europe
+2012,Portugal,10514844,0,Europe
+2014,Portugal,10401062,15,Europe
+2008,Qatar,1388962,7,Asia
+2010,Qatar,1765513,8,Asia
+2012,Qatar,2015624,8,Asia
+2014,Qatar,2172065,14,Asia
+2008,Rep of Korea,48948698,,Asia
+2010,Rep of Korea,49410366,,Asia
+2012,Rep of Korea,50004441,0,Asia
+2014,Rep of Korea,50423955,503,Asia
+2008,Rep of Moldova,3570108,12,Europe
+2010,Rep of Moldova,3562045,10,Europe
+2012,Rep of Moldova,3559519,55,Europe
+2014,Rep of Moldova,3556397,186,Europe
+2008,Romania,20537875,25,Europe
+2010,Romania,20246871,21,Europe
+2012,Romania,20058035,152,Europe
+2014,Romania,19904360,1278,Europe
+2008,Russian Federation,142742350,2,Europe
+2010,Russian Federation,142849449,5,Europe
+2012,Russian Federation,143201676,53,Europe
+2014,Russian Federation,143819569,1927,Europe
+2008,Rwanda,9750314,,Africa
+2010,Rwanda,10293669,,Africa
+2012,Rwanda,10817350,,Africa
+2014,Rwanda,11341544,,Africa
+2008,Saint Kitts and Nevis,51093,,North America
+2010,Saint Kitts and Nevis,52352,,North America
+2012,Saint Kitts and Nevis,53650,,North America
+2014,Saint Kitts and Nevis,54944,,North America
+2008,Saint Lucia,172729,,North America
+2010,Saint Lucia,177397,,North America
+2012,Saint Lucia,180890,,North America
+2014,Saint Lucia,183645,,North America
+2008,Saint Vincent and the Grenadines,109165,,North America
+2010,Saint Vincent and the Grenadines,109316,,North America
+2012,Saint Vincent and the Grenadines,109334,,North America
+2014,Saint Vincent and the Grenadines,109360,,North America
+2008,Saudi Arabia,26742842,14,Asia
+2010,Saudi Arabia,28090647,14,Asia
+2012,Saudi Arabia,29496047,14,Asia
+2014,Saudi Arabia,30886545,18,Asia
+2008,Senegal,12229703,,Africa
+2010,Senegal,12956791,,Africa
+2012,Senegal,13780108,,Africa
+2014,Senegal,14672557,0,Africa
+2008,Serbia  and Kosova,9097605,,Europe
+2010,Serbia  and Kosova,9067116,,Europe
+2014,Serbia and Kosovo,9004277,600000,Europe
+2012,Serbia and Kosovo (S/RES/1244 (1999)),9004277,0,Europe
+2008,Sierra Leone,5521838,,Africa
+2010,Sierra Leone,5775902,,Africa
+2012,Sierra Leone,6043157,,Africa
+2014,Sierra Leone,6315627,,Africa
+2008,Singapore,4839396,,Asia
+2010,Singapore,5076732,,Asia
+2012,Singapore,5312437,,Asia
+2014,Singapore,5469724,,Asia
+2008,Sint Maarten,40458,,North America
+2010,Sint Maarten,35474,,North America
+2012,Sint Maarten,34640,,North America
+2014,Sint Maarten,37685,,North America
+2008,Slovakia,5379233,14,Europe
+2010,Slovakia,5391428,22,Europe
+2012,Slovakia,5407579,24,Europe
+2014,Slovakia,5415949,40,Europe
+2008,Slovenia,2021316,,Europe
+2010,Slovenia,2048583,,Europe
+2012,Slovenia,2057159,2,Europe
+2014,Slovenia,2061980,20,Europe
+2008,Solomon Islands,503410,,Oceania
+2010,Solomon Islands,526177,,Oceania
+2012,Solomon Islands,549162,,Oceania
+2014,Solomon Islands,572171,,Oceania
+2008,Somalia,9132589,,Africa
+2010,Somalia,9581714,,Africa
+2012,Somalia,10033630,,Africa
+2014,Somalia,10517569,0,Africa
+2008,South Africa,49344228,,Africa
+2010,South Africa,1629223562,,Africa
+2012,South Africa,52341695,2,Africa
+2014,South Africa,54001953,28,Africa
+2008,South Sudan,9208598,,Africa
+2010,South Sudan,10056475,,Africa
+2012,South Sudan,10980623,,Africa
+2014,South Sudan,11911184,0,Africa
+2008,Spain,45954106,34,Europe
+2010,Spain,46576897,35,Europe
+2012,Spain,46773055,32,Europe
+2014,Spain,46476032,1336,Europe
+2008,Sri Lanka,20246000,,Asia
+2010,Sri Lanka,20653000,,Asia
+2012,Sri Lanka,20424000,1,Asia
+2014,Sri Lanka,20771000,,Asia
+2008,State of Palestine,,,Asia
+2010,State of Palestine,,,Asia
+2012,State of Palestine,,,Asia
+2014,State of Palestine,,,Asia
+2008,Sudan,34470138,,Africa
+2010,Sudan,36114885,,Africa
+2012,Sudan,37712420,0,Africa
+2014,Sudan,39350274,797,Africa
+2008,Suriname,506657,,South America
+2010,Suriname,518141,,South America
+2012,Suriname,528535,,South America
+2014,Suriname ,538248,,South America
+2008,Swaziland,1153750,,Africa
+2010,Swaziland,1193148,,Africa
+2012,Swaziland,1231694,,Africa
+2014,Swaziland,1269112,,Africa
+2008,Sweden,9219637,1084,Europe
+2010,Sweden,9378126,1169,Europe
+2012,Sweden,9519374,6051,Europe
+2014,Sweden,9696110,34285,Europe
+2008,Switzerland,7647675,626,Europe
+2010,Switzerland,7824909,694,Europe
+2012,Switzerland,7996861,1391,Europe
+2014,Switzerland,8188102,5161,Europe
+2008,Syrian Arab Rep.,20097057,,Asia
+2010,Syrian Arab Rep.,20720602,,Asia
+2012,Syrian Arab Rep.,21427155,,Asia
+2014,Syrian Arab Rep.,22157800,,Asia
+2008,Tajikistan,7254072,,Asia
+2010,Tajikistan,66692024,,Asia
+2012,Tajikistan,7930929,,Asia
+2014,Tajikistan,8295840,,Asia
+2008,Thailand,66453255,1,Asia
+2010,Thailand,66692024,0,Asia
+2012,Thailand,67164130,10,Asia
+2014,Thailand,67725979,82,Asia
+2010,The former Yugoslav Republic of Macedonia,2062443,0,Europe
+2012,The former Yugoslav Republic of Macedonia,2069270,0,Europe
+2014,The former Yugoslav Republic of Macedonia,2075625,11,Europe
+2008,Timor-Leste,1030630,,Asia
+2010,Timor-Leste,1066409,,Asia
+2012,Timor-Leste,1148958,,Asia
+2014,Timor-Leste,1212107,,Asia
+2008,Togo,6052937,,Africa
+2010,Togo,6390851,,Africa
+2012,Togo,6745581,1,Africa
+2014,Togo,7115163,0,Africa
+2008,Tonga,102816,,Oceania
+2010,Tonga,103947,,Oceania
+2012,Tonga,104769,,Oceania
+2014,Tonga,105586,,Oceania
+2008,Trinidad and Tobago,1315372,,North America
+2010,Trinidad and Tobago,1328095,,North America
+2012,Trinidad and Tobago,1341579,,North America
+2014,Trinidad and Tobago,1354483,8,North America
+2008,Tunisia,10328900,5,Africa
+2010,Tunisia,10547100,5,Africa
+2012,Tunisia,10777500,6,Africa
+2014,Tunisia,10996600,558,Africa
+2008,Turkey,70344357,12,Asia
+2010,Turkey,72310416,9,Asia
+2012,Turkey,74099255,248466,Asia
+2014,Turkey,75932348,1557899,Asia
+2008,Turkmenistan,4917541,,Asia
+2010,Turkmenistan,5041995,,Asia
+2012,Turkmenistan,5172941,,Asia
+2014,Turkmenistan,5307188,,Asia
+2008,Turks and Caicos Islands,29481,,North America
+2010,Turks and Caicos Islands,30993,,North America
+2012,Turks and Caicos Islands,32430,,North America
+2014,Turks and Caicos Islands,33740,,North America
+2008,Uganda,33149417,,Africa
+2010,Uganda,33149417,,Africa
+2012,Uganda,35400620,0,Africa
+2014,Uganda,37782971,,Africa
+2008,Ukraine,46258200,39,Europe
+2010,Ukraine,45870700,42,Europe
+2012,Ukraine,45593300,63,Europe
+2014,Ukraine,45362900,341,Europe
+2008,United Arab Emirates,6900142,21,Asia
+2010,United Arab Emirates,8329453,34,Asia
+2012,United Arab Emirates,8952542,16,Asia
+2014,United Arab Emirates,9086139,28,Asia
+2008,United Kingdom,61806995,395,Europe
+2010,United Kingdom,62766365,499,Europe
+2012,United Kingdom,63700300,1717,Europe
+2014,United Kingdom,64559135,4572,Europe
+2008,United Rep. of Tanzania,42844744,,Africa
+2010,United Rep. of Tanzania,45648525,,Africa
+2012,United Rep. of Tanzania,48645709,0,Africa
+2014,United Rep. of Tanzania,51822621,,Africa
+2008,United States,304093966,320,North America
+2010,United States,309347057,312,North America
+2012,United States,314112078,1425,North America
+2014,United States,318857056,4750,North America
+2008,Uruguay,3350832,,South America
+2010,Uruguay,3374414,,South America
+2012,Uruguay,3396753,,South America
+2014,Uruguay,3419516,48,South America
+2008,Uzbekistan,27302800,1,Asia
+2010,Uzbekistan,28562400,,Asia
+2012,Uzbekistan,29774500,,Asia
+2014,Uzbekistan,30757700,,Asia
+2008,Vanuatu,225335,,Oceania
+2010,Vanuatu,236299,,Oceania
+2012,Vanuatu,247498,,Oceania
+2014,Vanuatu,258883,,Oceania
+2008,Venezuela,28116716,,South America
+2010,Venezuela,28995745,,South America
+2012,Venezuela,29854238,,South America
+2014,Venezuela (Bolivarian Republic of),30693827,0,South America
+2008,Vietnam,85118700,,Asia
+2010,Vietnam,86932500,,Asia
+2012,Vietnam,88809200,,Asia
+2014,Vietnam,90728900,,Asia
+2008,Yemen,22322699,32,Asia
+2010,Yemen,23591972,52,Asia
+2012,Yemen,24882792,42,Asia
+2014,Yemen,25133492,2276,Asia
+2008,Zambia,13114579,,Africa
+2010,Zambia,13917439,,Africa
+2012,Zambia,14786581,,Africa
+2014,Zambia,15721343,,Africa
+2008,Zimbabwe,13495462,,Africa
+2010,Zimbabwe,13973897,,Africa
+2012,Zimbabwe,14565482,,Africa
+2014,Zimbabwe,15245855,,Africa

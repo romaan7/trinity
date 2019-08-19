@@ -1,0 +1,10 @@
+BBN ACCENT Event Coding Evaluation.updated v01.pdf (application/pdf) 1283024 bytes.
+CAMEO.CDB.09b5.pdf (application/pdf) 544671 bytes.
+changes.txt (text/plain) 1739 bytes.
+events.1995.20150313082510.tab.zip (application/zip) 5487693 bytes.
+events.1996.20150313082528.tab.zip (application/zip) 8636602 bytes.
+events.1997.20150313082554.tab.zip (application/zip) 9352308 bytes.
+events.1998.20150313082622.tab.zip (application/zip) 13373468 bytes.
+events.1999.20150313082705.tab.zip (application/zip) 19351304 bytes.
+events.2000.20150313082808.tab.zip (application/zip) 23098707 bytes.
+events.2001.20150313082922.tab.zip (application/zip) 28359082 bytes.

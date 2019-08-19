@@ -1,0 +1,579 @@
+{
+	"stations": {
+		"ThePoint": {
+			"abrev": "TPT",
+			"isParkRide": "0",
+			"isCycleRide": "0",
+			"_lat": "53.34835",
+			"_long": "-6.22925833333333",
+			"lable": "ThePoint"
+
+		},
+		"SpencerDock": {
+			"abrev": "SDK",
+			"isParkRide": "0",
+			"isCycleRide": "0",
+			"_lat": "53.3488222222222",
+			"_long": "-6.23714722222222",
+			"lable": "SpencerDock",
+			"name": "SpencerDock"
+		},
+		"MayorSquare-NCI": {
+			"abrev": "MYS",
+			"isParkRide": "0",
+			"isCycleRide": "0",
+			"_lat": "53.3492472222222",
+			"_long": "-6.24339444444444",
+			"lable": "MayorSquare-NCI",
+			"name": "MayorSquare-NCI"
+		},
+		"GeorgesDock": {
+			"abrev": "GDK",
+			"isParkRide": "0",
+			"isCycleRide": "0",
+			"_lat": "53.349528",
+			"_long": "-6.247575",
+			"lable": "GeorgesDock",
+			"name": "GeorgesDock"
+		},
+		"Connolly": {
+			"abrev": "CON",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.3509222222222",
+			"_long": "-6.24994166666667",
+			"lable": "Connolly",
+			"name": "Connolly"
+		},
+		"Busáras": {
+			"abrev": "BUS",
+			"isParkRide": "0",
+			"isCycleRide": "0",
+			"_lat": "53.350075",
+			"_long": "-6.25145",
+			"lable": "Busáras",
+			"name": "Busáras"
+		},
+		"AbbeyStreet": {
+			"abrev": "ABB",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.3485888888889",
+			"_long": "-6.25817222222222",
+			"lable": "AbbeyStreet",
+			"name": "AbbeyStreet"
+		},
+		"Jervis": {
+			"abrev": "JER",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.3476861111111",
+			"_long": "-6.26533333333333",
+			"lable": "Jervis",
+			"name": "Jervis"
+		},
+		"FourCourts": {
+			"abrev": "FOU",
+			"isParkRide": "0",
+			"isCycleRide": "0",
+			"_lat": "53.3468638888889",
+			"_long": "-6.27343611111111",
+			"lable": "FourCourts",
+			"name": "FourCourts"
+		},
+		"Smithfield": {
+			"abrev": "SMI",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.3471333333333",
+			"_long": "-6.27772777777778",
+			"lable": "Smithfield",
+			"name": "Smithfield"
+		},
+		"Museum": {
+			"abrev": "MUS",
+			"isParkRide": "0",
+			"isCycleRide": "0",
+			"_lat": "53.3478666666667",
+			"_long": "-6.28671388888889",
+			"lable": "Museum",
+			"name": "Museum"
+		},
+		"Heuston": {
+			"abrev": "HEU",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.3466472222222",
+			"_long": "-6.29180833333333",
+			"lable": "Heuston",
+			"name": "Heuston"
+		},
+		"Jamess": {
+			"abrev": "JAM",
+			"isParkRide": "0",
+			"isCycleRide": "0",
+			"_lat": "53.3419416666667",
+			"_long": "-6.29336111111111",
+			"lable": "Jamess",
+			"name": "Jamess"
+		},
+		"Fatima": {
+			"abrev": "FAT",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.3384388888889",
+			"_long": "-6.29254722222222",
+			"lable": "Fatima",
+			"name": "Fatima"
+		},
+		"Rialto": {
+			"abrev": "RIA",
+			"isParkRide": "0",
+			"isCycleRide": "0",
+			"_lat": "53.3379083333333",
+			"_long": "-6.29724166666667",
+			"lable": "Rialto",
+			"name": "Rialto"
+		},
+		"SuirRoad": {
+			"abrev": "SUI",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.3366166666667",
+			"_long": "-6.30721111111111",
+			"lable": "SuirRoad",
+			"name": "SuirRoad"
+		},
+		"Goldenbridge": {
+			"abrev": "GOL",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.3358916666667",
+			"_long": "-6.31356944444444",
+			"lable": "Goldenbridge",
+			"name": "Goldenbridge"
+		},
+		"Drimnagh": {
+			"abrev": "DRI",
+			"isParkRide": "0",
+			"isCycleRide": "0",
+			"_lat": "53.3353611111111",
+			"_long": "-6.31816111111111",
+			"lable": "Drimnagh",
+			"name": "Drimnagh"
+		},
+		"Blackhorse": {
+			"abrev": "BLA",
+			"isParkRide": "0",
+			"isCycleRide": "0",
+			"_lat": "53.3342583333333",
+			"_long": "-6.32739444444444",
+			"lable": "Blackhorse",
+			"name": "Blackhorse"
+		},
+		"Bluebell": {
+			"abrev": "BLU",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.3292972222222",
+			"_long": "-6.33379166666667",
+			"lable": "Bluebell",
+			"name": "Bluebell"
+		},
+		"Kylemore": {
+			"abrev": "KYL",
+			"isParkRide": "0",
+			"isCycleRide": "0",
+			"_lat": "53.3266555555556",
+			"_long": "-6.34344444444444",
+			"lable": "Kylemore",
+			"name": "Kylemore"
+		},
+		"RedCow": {
+			"abrev": "RED",
+			"isParkRide": "1",
+			"isCycleRide": "1",
+			"_lat": "53.3168333333333",
+			"_long": "-6.36987222222222",
+			"lable": "RedCow",
+			"name": "RedCow"
+		},
+		"Kingswood": {
+			"abrev": "KIN",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.3036944444444",
+			"_long": "-6.36525",
+			"lable": "Kingswood",
+			"name": "Kingswood"
+		},
+		"Belgard": {
+			"abrev": "BEL",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.2992861111111",
+			"_long": "-6.37488611111111",
+			"lable": "Belgard",
+			"name": "Belgard"
+		},
+		"Cookstown": {
+			"abrev": "COO",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.2935055555556",
+			"_long": "-6.38439722222222",
+			"lable": "Cookstown",
+			"name": "Cookstown"
+		},
+		"Hospital": {
+			"abrev": "HOS",
+			"isParkRide": "0",
+			"isCycleRide": "0",
+			"_lat": "53.2893694444444",
+			"_long": "-6.37885",
+			"lable": "Hospital",
+			"name": "Hospital"
+		},
+		"Tallaght": {
+			"abrev": "TAL",
+			"isParkRide": "1",
+			"isCycleRide": "1",
+			"_lat": "53.2874944444444",
+			"_long": "-6.37458888888889",
+			"lable": "Tallaght",
+			"name": "Tallaght"
+		},
+		"Fettercairn": {
+			"abrev": "FET",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.29351885",
+			"_long": "-6.395553516667",
+			"lable": "Fettercairn",
+			"name": "Fettercairn"
+		},
+		"Cheeverstown": {
+			"abrev": "CVN",
+			"isParkRide": "1",
+			"isCycleRide": "1",
+			"_lat": "53.290982416667",
+			"_long": "-6.4068485",
+			"lable": "Cheeverstown",
+			"name": "Cheeverstown"
+		},
+		"Citywest Campus": {
+			"abrev": "CIT",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.28783255",
+			"_long": "-6.418914583333",
+			"lable": "Citywest Campus",
+			"name": "Citywest Campus"
+		},
+		"Fortunestown": {
+			"abrev": "FOR",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.284250633333",
+			"_long": "-6.42460165",
+			"lable": "Fortunestown",
+			"name": "Fortunestown"
+		},
+		"Saggart": {
+			"abrev": "SAG",
+			"isParkRide": "0",
+			"isCycleRide": "1",
+			"_lat": "53.28467885",
+			"_long": "-6.43776255",
+			"lable": "Saggart",
+			"name": "Saggart"
+		}
+	},
+
+	"lines": [{
+		"name": "Red",
+		"label": "Red",
+		"color": "#FF0000",
+		"shiftCoords": [
+			0,
+			0
+		],
+		"nodes": [{
+				"coords": [
+					0,
+					3
+				],
+				"lable": "ThePoint",
+				"labelPos": "S"
+			},
+			{
+				"coords": [
+					0,
+					-3
+				],
+				"lable": "SpencerDock",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					0,
+					6
+				],
+				"lable": "MayorSquare-NCI",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					0,
+					9
+				],
+				"lable": "GeorgesDock",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					0,
+					12
+				],
+				"lable": "Connolly",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					0,
+					15
+				],
+				"lable": "Busáras",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					0,
+					18
+				],
+				"lable": "AbbeyStreet",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					0,
+					21
+				],
+				"lable": "Jervis",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					0,
+					24
+				],
+				"lable": "FourCourts",
+				"labelPos": "S"
+			},
+			{
+				"coords": [
+					0,
+					-25
+				],
+				"lable": "Smithfield",
+				"labelPos": "S"
+			},
+			{
+				"coords": [
+					0,
+					27
+				],
+				"lable": "Museum",
+				"labelPos": "S"
+			},
+			{
+				"coords": [
+					0,
+					30
+				],
+				"lable": "Heuston",
+				"labelPos": "S"
+			},
+			{
+				"coords": [
+					0,
+					33
+				],
+				"lable": "Jamess",
+				"labelPos": "S"
+			},
+			{
+				"coords": [
+					0,
+					-34
+				],
+				"lable": "Fatima",
+				"labelPos": "S"
+			},
+			{
+				"coords": [
+					0,
+					35
+				],
+				"lable": "Rialto",
+				"labelPos": "S"
+			},
+			{
+				"coords": [
+					0,
+					36
+				],
+				"lable": "SuirRoad",
+				"labelPos": "S"
+			},
+			{
+				"coords": [
+					0,
+					37
+				],
+				"lable": "Goldenbridge",
+				"labelPos": "S"
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Drimnagh",
+				"labelPos": "S"
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Blackhorse",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Bluebell",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Kylemore",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "RedCow",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Kingswood",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Belgard",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Cookstown",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Hospital",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Tallaght",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Fettercairn",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Cheeverstown",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Citywest Campus",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Fortunestown",
+				"labelPos": "S"
+
+			},
+			{
+				"coords": [
+					31,
+					-3
+				],
+				"lable": "Saggart",
+				"labelPos": "S"
+			}
+		]
+	}]
+}

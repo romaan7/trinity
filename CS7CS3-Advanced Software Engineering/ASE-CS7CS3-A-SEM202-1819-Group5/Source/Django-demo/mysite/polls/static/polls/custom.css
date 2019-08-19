@@ -1,0 +1,42 @@
+.liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+
+h1{
+ font-family: Helvetica;
+ text-align: center;
+}
+
+p{
+ text-align: center;
+}
+
+#fillgauge5{
+    position: center;
+    width: 100%;
+    height: 50;
+}
+#content {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  position: center;
+  }
+
+  .profile p {
+      position: center;
+    overflow: hidden;
+}
+
+.profile .label {
+    position: center;
+    vertical-align: top;
+    float: left;
+    width: 40%;
+}
+
+.profile .value{
+    position: center;
+    vertical-align: top;
+    float: left;
+    width: 60%;
+}

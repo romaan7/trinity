@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    {% load static %}
+    <script src="{% static 'polls/liquidFillGauge.js' %}" language="JavaScript"></script>
+    <link rel="stylesheet" href="{% static 'polls/custom.css' %}">
+
+</head>
+<body>
+
+
+<div id="content">
+<h1>Dublin Bikes Stand Information</h1>
+<svg id="fillgauge5"  ></svg>
+<p>(shows how full the station is. ex: if 0% then all bikes are available)</p>
+    <ul class="profile">
+    <li>
+        <span class="label">Bikestand Name: </span>
+        <span class="value"  id="bikestandName">Select a location</span>
+    </li>
+    <li>
+        <span class="label">Last update Time: </span>
+        <span class="value" id="lastUpdateTime">N/A</span>
+    </li>
+            <li>
+        <span class="label">Total Bike Stands: </span>
+        <span class="value" id="total_bike_stands">N/A</span>
+    </li>
+            <li>
+        <span class="label">Available Bike Stand: </span>
+        <span class="value" id="avaliable_bike_stand">N/A</span>
+    </li>
+            <li>
+        <span class="label">Available Bikes: </span>
+        <span class="value" id="avaliable_bikes">N/A</span>
+    </li>
+</ul>
+
+<select id="standName" onchange="gauge5.update(NewValue());" >
+{% if bike_name_data_list %}
+    {% for name in bike_name_data_list %}
+        <option value="{{ name }}" >{{ name }}</option>
+    {% endfor %}
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</select>
+
+</div>
+<script language="JavaScript">
+    var config4 = liquidFillGaugeDefaultSettings();
+    config4.circleThickness = 0.15;
+    config4.circleColor = "#808015";
+    config4.textColor = "#555500";
+    config4.waveTextColor = "#FFFFAA";
+    config4.waveColor = "#AAAA39";
+    config4.textVertPosition = 0.8;
+    config4.waveAnimateTime = 1000;
+    config4.waveHeight = 0.05;
+    config4.waveAnimate = true;
+    config4.waveRise = false;
+    config4.waveHeightScaling = false;
+    config4.waveOffset = 0.25;
+    config4.textSize = 0.75;
+    config4.waveCount = 3;
+    var gauge5 = loadLiquidFillGauge("fillgauge5", 99.9, config4);
+
+    function NewValue(){
+        True = true
+        False = false
+        json_data = {{ bike_full_data_list|safe }}
+        for (i in json_data) {
+            var json_name_value = json_data[i]["name"];
+            var local_name_value = document.getElementById("standName").value;
+            var json_total_bike_stand_value = json_data[i]["bike_stands"];
+            var json_avaliable_bike_value = json_data[i]["available_bike_stands"];
+
+            if (json_name_value === local_name_value) {
+            document.getElementById("bikestandName").innerHTML = json_data[i]["name"]
+            document.getElementById("lastUpdateTime").innerHTML = new Date(json_data[i]["last_update"]).toLocaleString("en-US")
+            document.getElementById("total_bike_stands").innerHTML = json_data[i]["bike_stands"]
+            document.getElementById("avaliable_bike_stand").innerHTML = json_data[i]["available_bike_stands"]
+            document.getElementById("avaliable_bikes").innerHTML = json_data[i]["available_bikes"]
+            var free_percent = (json_avaliable_bike_value/json_total_bike_stand_value)*100
+            return free_percent
+            }
+        }
+        return 20
+    }
+
+
+</script>
+
+</body>
+</html>

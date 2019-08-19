@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Roman Shaikh">
+    <meta name="description" content="CS7DS4-Data Visulisation A">
+    <meta name="keywords" content="Data Sciencev - CS7DS4-Data Visulisation">
+		<link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+		<script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+	</head>	
+  <style>
+  text{
+  font-family: 'Laila', serif;
+  }
+  body {
+    background-image : url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
+}
+  </style>
+	<body>
+
+	<script>
+
+  var cities = ["Kowno",
+  "Wilna",
+  "Smorgoni",
+  "Molodexno",
+  "Gloubokoe",
+  "Minsk",
+  "Studienska",
+  "Polotzk",
+  "Bobr",
+  "Witebsk",
+  "Orscha",
+  "Mohilow",
+  "Smolensk",
+  "Dorogobouge",
+  "Wixma",
+  "Chjat",
+  "Mojaisk",
+  "Moscou",
+  "Tarantino",
+  "Malo-jarosewli"]
+  
+  
+  
+  var city_data = [
+  {
+    "LONC": 0.77103308,
+    "LATC": 259.740243,
+    "CITY": "Kowno"
+  },
+  {
+    "LONC": 169.405066,
+    "LATC": 249.740243,
+    "CITY": "Wilna"
+  },
+  {
+    "LONC": 336.405066,
+    "LATC": 331.740243,
+    "CITY": "Smorgoni"
+  },
+  {
+    "LONC": 375.405066,
+    "LATC": 373.740243,
+    "CITY": "Molodexno"
+  },
+  {
+    "LONC": 440.405066,
+    "LATC": 126.740243,
+    "CITY": "Gloubokoe"
+  },
+  {
+    "LONC": 469.405066,
+    "LATC": 454.740243,
+    "CITY": "Minsk"
+  },
+  {
+    "LONC": 547.405066,
+    "LATC": 417.740243,
+    "CITY": "Studienska"
+  },
+  {
+    "LONC": 583.405066,
+    "LATC": 88.740243,
+    "CITY": "Polotzk"
+  },
+  {
+    "LONC": 704.405066,
+    "LATC": 381.740243,
+    "CITY": "Bobr"
+  },
+  {
+    "LONC": 751.405066,
+    "LATC": 143.740243,
+    "CITY": "Witebsk"
+  },
+  {
+    "LONC": 818.405066,
+    "LATC": 291.740243,
+    "CITY": "Orscha"
+  },
+  {
+    "LONC": 830.405066,
+    "LATC": 437.740243,
+    "CITY": "Mohilow"
+  },
+  {
+    "LONC": 976.405066,
+    "LATC": 243.740243,
+    "CITY": "Smolensk"
+  },
+  {
+    "LONC": 1122.40507,
+    "LATC": 173.740243,
+    "CITY": "Dorogobouge"
+  },
+  {
+    "LONC": 1299.40507,
+    "LATC": 175.740243,
+    "CITY": "Wixma"
+  },
+  {
+    "LONC": 1324.40507,
+    "LATC": 15.740243,
+    "CITY": "Chjat"
+  },
+  {
+    "LONC": 1478.40507,
+    "LATC": 76.740243,
+    "CITY": "Mojaisk"
+  },
+  {
+    "LONC": 1650,
+    "LATC": -50,
+    "CITY": "Moscou"
+  },
+  {
+    "LONC": 1669.40507,
+    "LATC": 77.740243,
+    "CITY": "Tarantino"
+  },
+  {
+    "LONC": 1631.40507,
+    "LATC": 156.740243,
+    "CITY": "Malo-jarosewli"
+  }
+];
+
+var temp_axis_data = [
+{
+"id":0,
+"x":0,
+"y":-5,
+"path_d":"M0.963027764,-16 L10.2176551,-16"
+},
+{
+"id":5,
+"x":0,
+"y":11,
+"path_d":"M0.963027764,0 L10.2176551,0"
+},
+{
+"id":10,
+"x":0,
+"y":28,
+"path_d":"M0.963027764,16.259757029 L10.2176551,16.259757029"
+},
+{
+"id":15,
+"x":0,
+"y":47,
+"path_d":"M1.42575913,36.259757 L10.6803864,36.259757"
+},
+{
+"id":20,
+"x":0,
+"y":64,
+"path_d":"M0.963027764,52.259757029 L10.2176551,52.259757029"
+},
+{
+"id":25,
+"x":0,
+"y":83,
+"path_d":"M1.42575913,72.259757 L10.6803864,72.259757"
+},
+{
+"id":30,
+"x":0,
+"y":100,
+"path_d":"M1.42575913,88.259757 L10.6803864,88.259757"
+},
+{
+"id":35,
+"x":0,
+"y":120,
+"path_d":"M1.42575913,108.259757 L10.6803864,108.259757"
+},
+{
+"id":40,
+"x":0,
+"y":140,
+"path_d":"M1.42575913,128.259757 L10.6803864,128.259757"
+}
+];
+
+var temprature_data = [
+{
+"translate":"1364.000000, 14.000000",
+"date":"24th Oct",
+"degree":"0°"
+},
+{
+"translate": "1020.000000, 50.000000",
+"date":"9th Nov",
+"degree":"-9°"
+},{
+"translate":"841.000000, 87.000000",
+"date":"14th Nov",
+"degree":"21°"
+},{
+"translate":"537.000000, 51.000000",
+"date":"",
+"degree":"-11°"
+},{
+"translate":"400.000000, 84.000000",
+"date": "28th Nov",
+"degree":"-20°"
+},{
+"translate":"300.000000, 99.000000",
+"date": "1st Dec",
+"degree":"-24°"
+},{
+"translate":"221.000000, 122.000000",
+"date":"6th Dec",
+"degree":"-30°"
+},{
+"translate":"0.000000, 108.000000",
+"date":"7th Dec",
+"degree":"-26°"
+}
+];
+
+var temprature_lines = [
+{"path_d":"M1488.92082,560.15395 L1488.92082,0.745745723"},
+{"path_d":"M1352.776752126,402.942844 L1352.776752126,0.273009"},
+{"path_d":"M1010.45659,436.638692 L1010.45659,91.4410934"},
+{"path_d":"M842.022375,478.284515 L842.022375,146.043395"},
+{"path_d":"M516.259493,439.41508 L516.259493,248.769758"},
+{"path_d":"M400.576652,472.731739 L400.576652,256.17346"},
+{"path_d":"M295.073901,489.390068 L295.073901,197.869308"},
+{"path_d":"M218.260494,509.750248 L218.260494,229.33504"},
+{"path_d":"M0.776752126,494.942844 L0.776752126,205.273009"}
+]
+
+var surv_count = [
+{
+"data":"100.000",
+"x":"1584.00339",
+"y":"27.5310474",
+"translate":"translate(1605.003388, 22.531047) rotate(-296.000000) translate(-1605.003388, -22.531047)"
+},
+{
+"data":"100.000",
+"x":"1672.80121",
+"y":"119.121887",
+"translate":"translate(1693.801213, 114.121887) rotate(-296.000000) translate(-1693.801213, -114.121887)"
+},{
+"data":"100.000",
+"x":"1458.24779",
+"y":"90.0518284",
+"translate":"translate(1479.247792, 85.051828) rotate(-76.000000) translate(-1479.247792, -85.051828)"
+},{
+"data":"96.000",
+"x":"1565.52203",
+"y":"255.140941",
+"translate":"translate(1583.522026, 250.140941) rotate(-76.000000) translate(-1583.522026, -250.140941)"
+},{
+"data":"87.000",
+"x":"1367.56546",
+"y":"247.426405",
+"translate":"translate(1385.565456, 242.426405) rotate(-112.000000) translate(-1385.565456, -242.426405)"
+},{
+"data":"55.000",
+"x":"1244.56546",
+"y":"302.426405",
+"translate":"translate(1262.565456, 297.426405) rotate(-112.000000) translate(-1262.565456, -297.426405)"
+},{
+"data":"37.000",
+"x":"1093.56546",
+"y":"364.426405",
+"translate":"translate(1111.565456, 359.426405) rotate(-112.000000) translate(-1111.565456, -359.426405)"
+},{
+"data":"145.000",
+"x":"1007.68928",
+"y":"254.207957",
+"translate":"translate(1028.689276, 249.207957) rotate(-112.000000) translate(-1028.689276, -249.207957)"
+},{
+"data":"175.000",
+"x":"814.530512",
+"y":"206.153653",
+"translate":"translate(835.530512, 201.153653) rotate(-69.000000) translate(-835.530512, -201.153653)"
+},{
+"data":"30.000",
+"x":"622.675017",
+"y":"366.307834",
+"translate":"translate(640.675017, 361.307834) rotate(-12.000000) translate(-640.675017, -361.307834)"
+},
+{
+"data":"33.000",
+"x":"462.943427",
+"y":"150.368993",
+"translate":"translate(480.943427, 145.368993) rotate(-85.000000) translate(-480.943427, -145.368993)"
+},
+{
+"data":"400.000",
+"x":"107.398082",
+"y":"239.740243",
+"translate":"translate(128.398082, 234.740243) rotate(-90.000000) translate(-128.398082, -234.740243)"
+},
+{
+"data":"422.000",
+"x":"-8.09493372",
+"y":"241.740243",
+"translate":"translate(12.905066, 236.740243) rotate(-104.000000) translate(-12.905066, -236.740243)"
+},{
+"data":"6.000",
+"x":"37.4050663",
+"y":"150.740243",
+"translate":""
+},{
+"data":"22.000",
+"x":"99.4050663",
+"y":"139.740243",
+"translate":""
+},
+{
+"data":"60.000",
+"x":"310.405066",
+"y":"238.360596",
+"translate":"translate(328.405066, 233.360596) rotate(-313.000000) translate(-328.405066, -233.360596)"
+},
+{
+"data":"24.000",
+"x":"911.565456",
+"y":"410.426405",
+"translate":"translate(929.565456, 405.426405) rotate(-112.000000) translate(-929.565456, -405.426405)"
+},
+{
+"data":"20.000",
+"x":"742.565456",
+"y":"463.426405",
+"translate":"translate(760.565456, 458.426405) rotate(-112.000000) translate(-760.565456, -458.426405)"
+},
+{
+"data":"50.000",
+"x":"642.318195",
+"y":"504.292702",
+"translate":"translate(660.318195, 499.292702) rotate(-107.000000) translate(-660.318195, -499.292702)"
+},
+{
+"data":"12.000",
+"x":"341.405066",
+"y":"465.740243",
+"translate":"translate(359.405066, 460.740243) rotate(-90.000000) translate(-359.405066, -460.740243)"
+},
+{
+"data":"14.000",
+"x":"236.405066",
+"y":"451.740243",
+"translate":"translate(254.405066, 446.740243) rotate(-90.000000) translate(-254.405066, -446.740243)"
+},
+{
+"data":"8.000",
+"x":"176.405066",
+"y":"445.740243",
+"translate":"translate(190.905066, 440.740243) rotate(-90.000000) translate(-190.905066, -440.740243)"
+},
+{
+"data":"4.000",
+"x":"62.4050663",
+"y":"446.240243",
+"translate":"translate(76.905066, 441.240243) rotate(-90.000000) translate(-76.905066, -441.240243)"
+},
+{
+"data":"10.000",
+"x":"14.9050663",
+"y":"453.240243",
+"translate":"translate(32.905066, 448.240243) rotate(-90.000000) translate(-32.905066, -448.240243)"
+},
+{
+"data":"28.000",
+"x":"499.33327",
+"y":"468.3287",
+"translate":"translate(517.333270, 463.328700) rotate(-56.000000) translate(-517.333270, -463.328700)"
+},
+{
+"data":"127.000",
+"x":"1343.24779",
+"y":"52.0518284",
+"translate":"translate(1364.247792, 47.051828) rotate(-76.000000) translate(-1364.247792, -47.051828)"
+}
+]
+var windowWidth = "1920px";
+var windowHeight = "1080px";
+var retreatColor = "#7f2704";
+var advanceColor = "#f16913";
+
+//var windowWidth = window.innerWidth;
+//var windowHeight = window.innerHeight;
+
+//MAIN SVG ELEMENT
+var svg = d3.select("body")
+            .append("svg")
+            //.attr("viewBox","0 0"+" "+window.innerWidth+" "+window.innerHeight)
+            .attr("width",windowWidth)
+            .attr("height",windowHeight)
+            .attr("id","minards-map")
+            .append("g").attr("id","svgMinard")
+
+//ADD PATHS
+var paths = d3.select("#svgMinard")
+              .append("g")
+              .attr("id","paths");
+
+var border = d3.select("#svgMinard").append("g")
+               .attr("id","border")
+                .append("rect")
+        .attr("x","0")
+        .attr("y","0")
+        .attr("style","fill:none;stroke-width:3;stroke:rgb(0,0,0)")
+        .attr("width",windowWidth)
+        .attr("height",windowHeight);
+
+//Add title     
+var title = d3.select("#svgMinard").append("g")
+               .attr("id","title")
+               .attr("width","500")
+               .attr("hight","300")     
+   
+   title.append("text")
+         .attr("id","title-text")
+        .attr("style","font: italic 60px,sans-serif;")
+        .attr("x","50")
+        .attr("y","50")
+        .attr("fill","Black")
+        .append("tspan")
+        .html("Name: Roman Shaikh");
+   
+   d3.select("#title-text").append("tspan")
+        .attr("y","80")
+        .attr("x","50")
+        .html("CS7DS4-Data Visulisation");
+     
+   title.append("text")
+         .attr("id","title-text-bold")
+        .attr("style","font: bold 100px,sans-serif;")
+        .attr("font-size","40")
+        .attr("x","50")
+        .attr("y","50")
+        .append("tspan")
+        .attr("y","130")
+        .attr("x","50")
+        .html("Minard's Map of the Russian Campaign");
+//Add legand
+var legend = d3.select("#svgMinard").append("g")
+               .attr("id","legend")
+               .attr("width","500")
+               .attr("hight","300")
+
+        legend.append("rect")
+        .attr("x","810")
+        .attr("y","30")
+        .attr("style","fill:none;stroke-width:3;stroke:rgb(0,0,0)")
+        .attr("width","300")
+        .attr("height","165");
+        
+        legend.append("rect")
+        .attr("x","830")
+        .attr("y","50")
+        .attr("style","fill:"+advanceColor)
+        .attr("width","100")
+        .attr("height","50");
+
+        
+       legend.append("rect")
+        .attr("x","830")
+        .attr("y","120")
+        .attr("style","fill:"+retreatColor)
+        .attr("width","100")
+        .attr("height","50");
+        
+       legend.append("text")
+        .attr("style","font: italic 13px,sans-serif;")
+        .attr("x","950")
+        .attr("y","80")
+        .attr("fill","Black")
+        .append("tspan")
+        .html("Advance");
+        
+      legend.append("text")
+        .attr("style","font: italic 13px,sans-serif;")
+        .attr("x","950")
+        .attr("y","150")
+        .attr("fill","Black")
+        .append("tspan")
+        .html("Retreat");
+        
+     paths.append("path")
+              .attr("d","M856.795398,616.610305 L996.077539,556.455228 L1179.31916,519.89945 L1349.14157,456.505253 L1469.91446,383.856428 L1596.70285,325.552276 L1774.85443,369.511756 L1788.73637,363.033517 L1797.991,241.335168 L1828.994,221.437719 L1847.96598,256.142571 L1831.30765,263.546273 L1822.05303,382.930965 L1777.63082,404.67934 L1594.38919,360.257129 L1475.0045,415.784892 L1469.45173,408.843922 L1350.9925,478.716358 L1346.82791,474.089045 L1180.24462,534.244122 L1179.31916,530.542271 L997.465733,568.023512 L995.614807,565.247124 L859.571786,625.864932 L860.95998,630.954977 L769.801901,658.256128 L744.351676,655.47974 L744.814407,645.762381 L629.594297,579.591796 L562.035518,617.073037 L496.327664,597.175588 L363.061031,589.309155 L338.536268,587.92096 L272.828414,592.085543 L272.365683,588.846423 L211.285143,591.622811 L211.747874,594.861931 L166.4002,595.787394 L165.937469,590.697349 L207.583292,589.309155 L211.747874,588.383692 L338.998999,582.830915 L498.178589,592.085543 L561.110055,611.057529 L631.445223,571.262631 L742.038019,636.045023 L767.950975,639.284142")
+              .attr("id","back1") 
+              .attr("fill",retreatColor);
+              
+     paths.append("path")
+              .attr("d","M846.748602,619.531235 L803.581291,466.685343 L769.801901,362.570785 L780.444722,362.570785 L813.761381,466.222611 L856.408209,617.561905")
+              .attr("id","back2") 
+              .attr("fill",retreatColor);
+     
+     paths.append("path")
+              .attr("d","M208.112607,589.567881 L212.206386,588.718742 L231.368792,287.507727 L227.275012,287.507727 L208.112607,589.567881 Z")
+              .attr("id","back3") 
+              .attr("fill",retreatColor);
+     
+     paths.append("path")
+              .attr("d","M118.893116,443.857266 L236.426883,409.152414 L240.591465,291.155916 L251.697018,291.155916 L247.995167,422.571623 L364.603469,439.692684 L512.677506,321.696186 L779.210775,353.62465 L781.524432,365.192934 L622.344842,348.997336 L621.419379,352.699187 L523.783059,340.20544 L377.559947,455.888282 L467.329832,431.826251 L469.180757,435.990833 L554.323331,411.466071 L555.711526,415.630653 L637.152246,392.494085 L657.512426,391.105891 L657.512426,395.270473 L752.372356,386.015846 L752.372356,390.643159 L826.409374,382.776726 L826.409374,387.866771 L912.477408,378.612144 L912.94014,381.851263 L942.554947,378.612144 L1148.4704,455.42555 L1334.02568,390.180428 L1501.53451,233.314495 L1613.05277,264.780228 L1610.73911,271.258467 L1638.04026,280.050363 L1813.87818,193.519597 L1831.46197,224.522599 L1639.89119,322.158917 L1518.19284,288.379527 L1344.20577,452.649162 L1153.09772,522.521598 L933.763051,442.469072 L920.806573,443.857266 L920.806573,449.410043 L837.052196,458.201939 L837.514927,463.291984 L762.089715,472.08388 L763.015177,479.02485 L668.617979,488.279477 L668.155247,493.832254 L652.422381,494.757717 L586.251796,514.192434 L586.714527,518.357016 L497.870102,542.881779 L499.258296,547.971824 L368.30532,584.06487 L243.830585,566.481078 L167.47991,589.154915 L118.893116,443.857266 Z")
+              .attr("id","forward") 
+              .attr("fill",advanceColor);
+
+//ADD TEMPRATURE     
+var temp_axis=svg.append("g")
+         .attr("id","temp-axis")
+         .attr("transform","translate(1816.000000, 800.000000)")
+         .attr("stroke","#000000");
+
+
+     temp_axis.selectAll("circle").data(temp_axis_data).enter()
+               .append("path")
+               .attr("id",function(d){return d.id})
+               .attr("d",function(d){return d.path_d})
+           
+     var temprature_div =  svg.append("g")
+               .attr("id","axis-numbers")
+               .attr("transform","translate(305.000000, 773.000000)")
+               
+       temprature_div.append ("g").attr("id","Degree-axis-scale").attr("transform","translate(1523.000000, 19.000000)").attr("font-size","11").attr("fill","#000000")
+               .selectAll("circle").data(temp_axis_data).enter()
+               .append("text")
+               .append("tspan")
+               .attr("x",function(d){return d.x})
+               .attr("y",function(d){return d.y})
+               .html(function(d){return d.id});
+     
+     temprature_div.selectAll("circle").data(temprature_data).enter()
+                    .append("g")
+                    .attr("id","temprature")
+                    .attr("transform",function(d){return "translate("+d.translate+")"})
+                    .append("text").attr("id",function(d){return d.date}).attr("font-size","11")
+                    .append("tspan")
+                    .attr("x","0")
+                    .attr("y","15")
+                    .attr("fill","#000000")
+                    .html(function(d){return d.degree +"&nbsp;&nbsp;"+ d.date});
+                    
+     
+     paths.append("path")
+              .attr("d","M334.371686,877.128062 L551.855428,891.010003 L628.668834,870.649823 L733.246123,853.991494 L849.854427,820.674836 L1174.69185,858.618808 L1344.05153,816.972985 L1691.1001,784.581789 L1822.5158,785.507252 L1822.5158,785.507252 L1822.5158,785.507252")
+              .attr("id","temprature") 
+              .attr("stroke","blue")
+              .attr("stroke-width","3")
+              .attr("fill","none");
+
+     paths.append("g")
+           .attr("id","vertical-lines")
+                  .attr("transform","translate(333.594934, 381.259757)")
+                  .attr("stroke","#000000")
+                  .selectAll("#vertical-lines")
+                  .data(temprature_lines).enter()
+                  .append("path")
+                  .attr("d",function(d){return d.path_d});
+                  
+        svg.append("g")
+            .attr('id',"survivor-counts")
+            .attr("transform","translate(156.594934, 167.259757)")
+            .attr("font-weight","normal")
+            .attr("font-size","10" )
+            .attr("fill","#000000")
+            .selectAll("circle")
+            .data(surv_count)
+            .enter()
+            .append('text')
+            .attr("id",function(d,i){return d.data})
+            .attr("transform",function(d){return d.translate})
+            .append('tspan')
+            .attr('x',function(d){return d.x})
+            .attr('y',function(d){return d.y})
+            .html(function(d){return d.data});
+            
+        svg.append("g")
+            .attr('id',"cities")
+            .attr("transform","translate(159.594934, 255.259757)")
+            .attr("font-weight","normal")
+            .attr("font-size","15" )
+            .attr("fill","#000000")
+            .selectAll("circle")
+            .data(city_data)
+            .enter()
+            .append('text')
+            .attr("id",function(d,i){return d.CITY})
+            .append('tspan')
+            .attr('x',function(d){return d.LONC})
+            .attr('y',function(d){return d.LATC})
+            .html(function(d){return "&#10687;"+d.CITY});
+
+	var windowWidth = window.innerWidth;
+	var scaleChange = windowWidth/1920;
+
+	d3.select("#minards-map")
+		.attr("transform", "scale(" + scaleChange + ")");
+
+	d3.select("#svgMinard")
+		.attr("width", windowWidth - 20)
+		.attr("height", 1080*scaleChange - 20);   
+    
+////////////////////////////////////////////////////////////THE END///////////////////////////////////////////////////////////////////////////
+
+	</script>
+
+	</body>
+</html>

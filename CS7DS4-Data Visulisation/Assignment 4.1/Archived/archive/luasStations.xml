@@ -1,0 +1,73 @@
+<stops>
+    <line name="Luas Red Line">
+        <stop abrev="TPT" isParkRide="0" isCycleRide="0" lat="53.34835" long="-6.22925833333333" pronunciation="The Point">The Point</stop>
+        <stop abrev="SDK" isParkRide="0" isCycleRide="0" lat="53.3488222222222" long="-6.23714722222222" pronunciation="Spencer Dock">Spencer Dock</stop>
+        <stop abrev="MYS" isParkRide="0" isCycleRide="0" lat="53.3492472222222" long="-6.24339444444444" pronunciation="Mayor Square - NCI">Mayor Square - NCI</stop>
+        <stop abrev="GDK" isParkRide="0" isCycleRide="0" lat="53.349528" long="-6.247575" pronunciation="George's Dock">George's Dock</stop>
+        <stop abrev="CON" isParkRide="0" isCycleRide="1" lat="53.3509222222222" long="-6.24994166666667" pronunciation="Connolly">Connolly</stop>
+        <stop abrev="BUS" isParkRide="0" isCycleRide="0" lat="53.350075" long="-6.25145" pronunciation="Busáras">Busáras</stop>
+        <stop abrev="ABB" isParkRide="0" isCycleRide="1" lat="53.3485888888889" long="-6.25817222222222" pronunciation="Abbey Street">Abbey Street</stop>
+        <stop abrev="JER" isParkRide="0" isCycleRide="1" lat="53.3476861111111" long="-6.26533333333333" pronunciation="Jervis">Jervis</stop>
+        <stop abrev="FOU" isParkRide="0" isCycleRide="0" lat="53.3468638888889" long="-6.27343611111111" pronunciation="Four Courts">Four Courts</stop>
+        <stop abrev="SMI" isParkRide="0" isCycleRide="1" lat="53.3471333333333" long="-6.27772777777778" pronunciation="Smithfield">Smithfield</stop>
+        <stop abrev="MUS" isParkRide="0" isCycleRide="0" lat="53.3478666666667" long="-6.28671388888889" pronunciation="Museum">Museum</stop>
+        <stop abrev="HEU" isParkRide="0" isCycleRide="1" lat="53.3466472222222" long="-6.29180833333333" pronunciation="Heuston">Heuston</stop>
+        <stop abrev="JAM" isParkRide="0" isCycleRide="0" lat="53.3419416666667" long="-6.29336111111111" pronunciation="James's">James's</stop>
+        <stop abrev="FAT" isParkRide="0" isCycleRide="1" lat="53.3384388888889" long="-6.29254722222222" pronunciation="Fatima">Fatima</stop>
+        <stop abrev="RIA" isParkRide="0" isCycleRide="0" lat="53.3379083333333" long="-6.29724166666667" pronunciation="Rialto">Rialto</stop>
+        <stop abrev="SUI" isParkRide="0" isCycleRide="1" lat="53.3366166666667" long="-6.30721111111111" pronunciation="Suir Road">Suir Road</stop>
+        <stop abrev="GOL" isParkRide="0" isCycleRide="1" lat="53.3358916666667" long="-6.31356944444444" pronunciation="Goldenbridge">Goldenbridge</stop>
+        <stop abrev="DRI" isParkRide="0" isCycleRide="0" lat="53.3353611111111" long="-6.31816111111111" pronunciation="Drimnagh">Drimnagh</stop>
+        <stop abrev="BLA" isParkRide="0" isCycleRide="0" lat="53.3342583333333" long="-6.32739444444444" pronunciation="Blackhorse">Blackhorse</stop>
+        <stop abrev="BLU" isParkRide="0" isCycleRide="1" lat="53.3292972222222" long="-6.33379166666667" pronunciation="Bluebell">Bluebell</stop>
+        <stop abrev="KYL" isParkRide="0" isCycleRide="0" lat="53.3266555555556" long="-6.34344444444444" pronunciation="Kylemore">Kylemore</stop>
+        <stop abrev="RED" isParkRide="1" isCycleRide="1" lat="53.3168333333333" long="-6.36987222222222" pronunciation="Red Cow">Red Cow</stop>
+        <stop abrev="KIN" isParkRide="0" isCycleRide="1" lat="53.3036944444444" long="-6.36525" pronunciation="Kingswood">Kingswood</stop>
+        <stop abrev="BEL" isParkRide="0" isCycleRide="1" lat="53.2992861111111" long="-6.37488611111111" pronunciation="Belgard">Belgard</stop>
+        <stop abrev="COO" isParkRide="0" isCycleRide="1" lat="53.2935055555556" long="-6.38439722222222" pronunciation="Cookstown">Cookstown</stop>
+        <stop abrev="HOS" isParkRide="0" isCycleRide="0" lat="53.2893694444444" long="-6.37885" pronunciation="Hospital">Hospital</stop>
+        <stop abrev="TAL" isParkRide="1" isCycleRide="1" lat="53.2874944444444" long="-6.37458888888889" pronunciation="Tallaght">Tallaght</stop>
+        <stop abrev="FET" isParkRide="0" isCycleRide="1" lat="53.29351885" long="-6.395553516667" pronunciation="Fettercairn">Fettercairn</stop>
+        <stop abrev="CVN" isParkRide="1" isCycleRide="1" lat="53.290982416667" long="-6.4068485" pronunciation="Cheeverstown">Cheeverstown</stop>
+        <stop abrev="CIT" isParkRide="0" isCycleRide="1" lat="53.28783255" long="-6.418914583333" pronunciation="Citywest Campus">Citywest Campus</stop>
+        <stop abrev="FOR" isParkRide="0" isCycleRide="1" lat="53.284250633333" long="-6.42460165" pronunciation="Fortunestown">Fortunestown</stop>
+        <stop abrev="SAG" isParkRide="0" isCycleRide="1" lat="53.28467885" long="-6.43776255" pronunciation="Saggart">Saggart</stop>
+    </line>
+    <line name="Luas Green Line">
+        <stop abrev="BRO" isParkRide="0" isCycleRide="0" lat="53.37223956" long="-6.29768465" pronunciation="Broombridge">Broombridge</stop>
+        <stop abrev="CAB" isParkRide="0" isCycleRide="0" lat="53.36433419" long="-6.28196899" pronunciation="Cabra">Cabra</stop>
+        <stop abrev="PHI" isParkRide="0" isCycleRide="0" lat="53.36037646" long="-6.27888498" pronunciation="Phibsborough">Phibsborough</stop>
+        <stop abrev="GRA" isParkRide="0" isCycleRide="0" lat="53.35719205" long="-6.27733848" pronunciation="Grangegorman">Grangegorman</stop>
+        <stop abrev="BRD" isParkRide="0" isCycleRide="0" lat="53.35407442" long="-6.27375642" pronunciation="Broadstone - DIT">Broadstone - DIT</stop>
+        <stop abrev="DOM" isParkRide="0" isCycleRide="0" lat="53.3513492" long="-6.26554234" pronunciation="Dominick">Dominick</stop>
+        <stop abrev="PAR" isParkRide="0" isCycleRide="0" lat="53.35310356" long="-6.26050153" pronunciation="Parnell">Parnell</stop>
+        <stop abrev="OUP" isParkRide="0" isCycleRide="0" lat="53.35161218" long="-6.26102943" pronunciation="O'Connell - Upper">O'Connell - Upper</stop>
+        <stop abrev="OGP" isParkRide="0" isCycleRide="0" lat="53.34884509" long="-6.25988168" pronunciation="O'Connell - GPO">O'Connell - GPO</stop>
+        <stop abrev="MAR" isParkRide="0" isCycleRide="0" lat="53.34924219" long="-6.25773649" pronunciation="Marlborough">Marlborough</stop>
+        <stop abrev="WES" isParkRide="0" isCycleRide="0" lat="53.34635626" long="-6.25897083" pronunciation="Westmoreland">Westmoreland</stop>
+        <stop abrev="TRY" isParkRide="0" isCycleRide="0" lat="53.34528172" long="-6.25825674" pronunciation="Trinity">Trinity</stop>
+        <stop abrev="DAW" isParkRide="0" isCycleRide="0" lat="53.34216927" long="-6.25796366" pronunciation="Dawson">Dawson</stop>
+        <stop abrev="STS" isParkRide="0" isCycleRide="0" lat="53.3390722222222" long="-6.26133333333333" pronunciation="St. Stephen's Green">St. Stephen's Green</stop>
+        <stop abrev="HAR" isParkRide="0" isCycleRide="1" lat="53.3333583333333" long="-6.26265" pronunciation="Harcourt">Harcourt</stop>
+        <stop abrev="CHA" isParkRide="0" isCycleRide="1" lat="53.3306694444444" long="-6.25868333333333" pronunciation="Charlemont">Charlemont</stop>
+        <stop abrev="RAN" isParkRide="0" isCycleRide="1" lat="53.3264333333333" long="-6.25620277777778" pronunciation="Ranelagh">Ranelagh</stop>
+        <stop abrev="BEE" isParkRide="0" isCycleRide="1" lat="53.3208222222222" long="-6.25465277777778" pronunciation="Beechwood">Beechwood</stop>
+        <stop abrev="COW" isParkRide="0" isCycleRide="1" lat="53.3164666666667" long="-6.25344722222222" pronunciation="Cowper">Cowper</stop>
+        <stop abrev="MIL" isParkRide="0" isCycleRide="1" lat="53.3099166666667" long="-6.25172777777778" pronunciation="Milltown">Milltown</stop>
+        <stop abrev="WIN" isParkRide="0" isCycleRide="1" lat="53.3015583333333" long="-6.25070833333333" pronunciation="Windy Arbour">Windy Arbour</stop>
+        <stop abrev="DUN" isParkRide="0" isCycleRide="1" lat="53.2923583333333" long="-6.24511666666667" pronunciation="Dundrum">Dundrum</stop>
+        <stop abrev="BAL" isParkRide="1" isCycleRide="1" lat="53.2861055555556" long="-6.23677222222222" pronunciation="Balally">Balally</stop>
+        <stop abrev="KIL" isParkRide="0" isCycleRide="1" lat="53.2830083333333" long="-6.22388611111111" pronunciation="Kilmacud">Kilmacud</stop>
+        <stop abrev="STI" isParkRide="1" isCycleRide="1" lat="53.2793111111111" long="-6.20991944444444" pronunciation="Stillorgan">Stillorgan</stop>
+        <stop abrev="SAN" isParkRide="1" isCycleRide="1" lat="53.2776027777778" long="-6.20467777777778" pronunciation="Sandyford">Sandyford</stop>
+        <stop abrev="CPK" isParkRide="0" isCycleRide="0" lat="53.27015" long="-6.20376388888889" pronunciation="Central Park">Central Park</stop>
+        <stop abrev="GLE" isParkRide="0" isCycleRide="1" lat="53.2663361111111" long="-6.20994166666667" pronunciation="Glencairn">Glencairn</stop>
+        <stop abrev="GAL" isParkRide="0" isCycleRide="1" lat="53.2611638888889" long="-6.20602222222222" pronunciation="The Gallops">The Gallops</stop>
+        <stop abrev="LEO" isParkRide="0" isCycleRide="1" lat="53.2582472222222" long="-6.19836111111111" pronunciation="Leopardstown Valley">Leopardstown Valley</stop>
+        <stop abrev="BAW" isParkRide="0" isCycleRide="0" lat="53.255047" long="-6.184475" pronunciation="Ballyogan Wood">Ballyogan Wood</stop>
+        <stop abrev="CCK" isParkRide="0" isCycleRide="1" lat="53.2540333333333" long="-6.16990833333333" pronunciation="Carrickmines">Carrickmines</stop>
+        <stop abrev="LAU" isParkRide="0" isCycleRide="0" lat="53.2506055555556" long="-6.15500555555556" pronunciation="Laughanstown">Laughanstown</stop>
+        <stop abrev="CHE" isParkRide="0" isCycleRide="0" lat="53.2453333333333" long="-6.14585277777778" pronunciation="Cherrywood">Cherrywood</stop>
+        <stop abrev="BRI" isParkRide="0" isCycleRide="0" lat="53.242075" long="-6.14288611111111" pronunciation="Bride's Glen">Bride's Glen</stop>
+    </line>
+</stops>

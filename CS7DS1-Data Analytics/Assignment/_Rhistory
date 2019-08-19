@@ -1,0 +1,290 @@
+full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)[,c('sex','race', 'educ_r', 'r_age', 'police','immig','rearn')]
+sex <- full_data[,1:]
+race <-full_data[,2:]
+educatoin <-full_data[,3:]
+age <-full_data[,4:]
+police <-full_data[,5:]
+immigration <-full_data[,6:]
+earnings <-full_data[,7:]
+full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)[,c('sex','race', 'educ_r', 'r_age', 'police','immig','rearn')]
+#sex <- full_data[,1:]
+#race <-full_data[,2:]
+#educatoin <-full_data[,3:]
+#age <-full_data[,4:]
+#police <-full_data[,5:]
+#immigration <-full_data[,6:]
+#earnings <-full_data[,7:]
+getwd()
+setwd("C:/Users/romaa/Trinity/CS7DS1-Data Analytics/Assignment")
+full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)[,c('sex','race', 'educ_r', 'r_age', 'police','immig','rearn')]
+#sex <- full_data[,1:]
+#race <-full_data[,2:]
+#educatoin <-full_data[,3:]
+#age <-full_data[,4:]
+#police <-full_data[,5:]
+#immigration <-full_data[,6:]
+#earnings <-full_data[,7:]
+View(full_data)
+full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)[,c('sex','race', 'educ_r', 'r_age', 'police','immig','rearn')]
+bind <- cbind(full_data)
+View(bind)
+earnings.imp <- random.imp (full_data[,7, drop=FALSE])
+random.imp <- function (a){
+missing <- is.na(a)
+n.missing <- sum(missing)
+a.obs <- a[!missing]
+imputed <- a
+imputed[missing] <- sample (a.obs, n.missing, replace=TRUE)
+return (imputed)
+}
+earnings.imp <- random.imp (full_data[,7, drop=FALSE])
+View(random.imp)
+View(earnings.imp)
+getwd()
+setwd("C:/Users/romaa/Trinity/CS7DS1-Data Analytics/Assignment")
+full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)[,c('sex','race', 'educ_r', 'r_age', 'police','immig','rearn')]
+sex <- full_data[,1, drop=FALSE]
+race <- full_data[,2, drop=FALSE]
+education <- full_data[,3, drop=FALSE]
+age <- full_data[,4, drop=FALSE]
+police <- full_data[,5, drop=FALSE]
+immigration <- full_data[,6, drop=FALSE]
+earnings <- full_data[,7, drop=FALSE]
+View(full_data)
+random.imp <- function (a){
+missing <- is.na(a)
+n.missing <- sum(missing)
+a.obs <- a[!missing]
+imputed <- a
+imputed[missing] <- sample (a.obs, n.missing, replace=TRUE)
+return (imputed)
+}
+topcode <- function (a, top){
+return (ifelse (a>top, top, a))
+}
+earnings.top <- topcode (earnings, 100) # earnings are in $thousands
+hist (earnings.top[earnings>0])
+earnings.imp <- random.imp (full_data[,7, drop=FALSE])
+getwd()
+setwd("C:/Users/romaa/Trinity/CS7DS1-Data Analytics/Assignment")
+full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)[,c('sex','race', 'educ_r', 'r_age', 'police','immig','rearn')]
+sex <- full_data[,1, drop=FALSE]
+race <- full_data[,2, drop=FALSE]
+education <- full_data[,3, drop=FALSE]
+age <- full_data[,4, drop=FALSE]
+police <- full_data[,5, drop=FALSE]
+immigration <- full_data[,6, drop=FALSE]
+earnings <- full_data[,7, drop=FALSE]
+#View(full_data)
+random.imp <- function (a){
+missing <- is.na(a)
+n.missing <- sum(missing)
+a.obs <- a[!missing]
+imputed <- a
+imputed[missing] <- sample (a.obs, n.missing, replace=TRUE)
+return (imputed)
+}
+topcode <- function (a, top){
+return (ifelse (a>top, top, a))
+}
+earnings.top <- topcode (earnings, 100) # earnings are in $thousands
+hist (earnings.top[earnings>0])
+earnings.imp <- random.imp (full_data[,7, drop=FALSE])
+View(earnings.top)
+View(earnings.top)
+View(earnings.imp)
+View(earnings.imp)
+sis <- data.frame (cbind (earnings, earnings.top, male, over65, white,immig, educ_r, workmos, workhrs.top, any.ssi, any.welfare, any.charity))
+lm.imp.1 <- lm (earnings ~ male + over65 + white + immig + educ_r +
+workmos + workhrs.top + any.ssi + any.welfare + any.charity,
+data=SIS, subset=earnings>0)
+sis <- data.frame (cbind (earnings, earnings.top, male, over65, white,immig, educ_r, workmos, workhrs.top, any.ssi, any.welfare, any.charity))
+full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)
+siswave3v4impute3 <- read.csv("C:/Users/romaa/Trinity/CS7DS1-Data Analytics/Assignment/siswave3v4impute3.csv", header=FALSE)
+View(siswave3v4impute3)
+siswave3v4impute3 <- read.csv("C:/Users/romaa/Trinity/CS7DS1-Data Analytics/Assignment/siswave3v4impute3.csv")
+View(siswave3v4impute3)
+cbind (sex, race, educ_r, r_age, earnings, police)[91:95,]
+#Read the CSV file into data frame full_data
+full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)
+View(siswave3v4impute3)
+full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)
+View(Data)
+n <- nrow (Data)
+attach(full_data)
+n <- nrow (full_data)
+full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)
+View(full_data)
+attach(full_data)
+n <- nrow (full_data)
+library(ggplot2)
+#Check and set the present working directory for R
+getwd()
+setwd("C:/Users/romaa/Trinity/CS7DS1-Data Analytics/Assignment")
+#Read the CSV file into data frame full_data
+#full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)[,c('sex','race', 'educ_r', 'r_age', 'police','immig','rearn')]
+full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)
+View(full_data)
+attach(full_data) #attach R objects to search path
+n <- nrow (full_data)
+# VARIABLES
+# rearn - candidate's earnings
+# tearn - partners's earnings
+# Function to fix(simplify) the earning variables
+na.fix <- function (a) {
+ifelse (a<0 | a==999999, NA, a)
+}
+earnings <- na.fix(rearn) + na.fix(tearn)
+earnings <- earnings/1000
+# Take only some rows to see missing data values.
+cbind (Data$sex, Data$race, Data$educ_r, Data$r_age, earnings, Data$police)[91:95,]
+# Function to impute missing values of earnings based on the observed data for this variable
+random.imp <- function (a){
+missing <- is.na(a)
+n.missing <- sum(missing)
+a.obs <- a[!missing]
+imputed <- a
+imputed[missing] <- sample (a.obs, n.missing, replace=TRUE)
+return (imputed)
+}
+#Function to top code the earnings to $100,000
+#topcoding reduces the sensitivity of the results to the highest values, which
+#in this survey go up to the millions.
+topcode <- function (a, top){
+return (ifelse (a>top, top, a))
+}
+earnings.imp <- random.imp (earnings) #IMPUTE
+earnings.top <- topcode (earnings, 100) # earnings are in $thousands
+hist (earnings.top[earnings>0], xlab = "earnings", main = "Observed earnings (excluding 0’s)")
+sis <- data.frame (cbind (earnings, earnings.top, male, over65, white,immig, educ_r, workmos, workhrs.top, any.ssi, any.welfare, any.charity))
+sis <- data.frame (cbind (earnings, earnings.top, full_data$male, over65, white,immig, educ_r, workmos, workhrs.top, any.ssi, any.welfare, any.charity))
+sis <- data.frame (cbind (earnings, earnings.top, full_data$male, full_data$over65, full_data$white,full_data$immig, full_data$educ_r, full_data$workmos, full_data$workhrs.top, full_data$any.ssi, full_data$any.welfare, full_data$any.charity))
+sis <- data.frame (cbind (earnings, earnings.top, full_data$male, full_data$over65, full_data$white,full_data$immig, full_data$educ_r, full_data$workmos, full_data$workhrs.top, full_data$any.ssi, full_data$any.welfare, full_data$any.charity))
+lm.imp.1 <- lm (earnings ~ male + over65 + white + immig + educ_r +
+workmos + workhrs.top + any.ssi + any.welfare + any.charity,
+data=SIS, subset=earnings>0)
+lm.imp.1 <- lm (earnings ~ male + over65 + white + immig + educ_r +
+workmos + workhrs.top + any.ssi + any.welfare + any.charity,
+data=sis, subset=earnings>0)
+lm.imp.1 <- lm (earnings ~ full_data$male + over65 + white + immig + educ_r +
+workmos + workhrs.top + any.ssi + any.welfare + any.charity,
+data=sis, subset=earnings>0)
+lm.imp.1 <- lm (earnings ~ full_data$male + full_data$over65 + full_data$white + full_data$immig + full_data$educ_r +
+full_data$workmos + full_data$workhrs.top + full_data$any.ssi + full_data$any.welfare + full_data$any.charity,
+data=sis, subset=earnings>0)
+#calculate each variable
+white <- ifelse (race==1, 1, 0)
+white[is.na(race)] <- 0
+male <- ifelse (sex==1, 1, 0)
+over65 <- ifelse (r_age>65, 1, 0)
+immig[is.na(immig)] <- 0
+educ_r[is.na(educ_r)] <- 2.5
+workhrs.top <- topcode (workhrs, 40)
+is.any <- function (a) {
+any.a <- ifelse (a>0, 1, 0)
+any.a[is.na(a)] <- 0
+return(any.a)
+}
+workmos <- workmos
+earnings[workmos==0] <- 0
+any.ssi <- is.any (ssi)
+any.welfare <- is.any (welfare)
+any.charity <- is.any (charity)
+#Now we perform deterministic imputation of
+sis <- data.frame (cbind (earnings, earnings.top, male, over65, white,immig, educ_r, workmos, workhrs.top, any.ssi, any.welfare, any.charity))
+library(ggplot2)
+#Check and set the present working directory for R
+getwd()
+setwd("C:/Users/romaa/Trinity/CS7DS1-Data Analytics/Assignment")
+#Read the CSV file into data frame full_data
+#full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)[,c('sex','race', 'educ_r', 'r_age', 'police','immig','rearn')]
+full_data <- read.csv("siswave3v4impute3.csv", header = TRUE)
+View(full_data)
+attach(full_data) #attach R objects to search path
+n <- nrow (full_data)
+# VARIABLES
+# rearn - candidate's earnings
+# tearn - partners's earnings
+# Function to fix(simplify) the earning variables
+na.fix <- function (a) {
+ifelse (a<0 | a==999999, NA, a)
+}
+earnings <- na.fix(rearn) + na.fix(tearn)
+earnings <- earnings/1000
+# Take only some rows to see missing data values.
+cbind (Data$sex, Data$race, Data$educ_r, Data$r_age, earnings, Data$police)[91:95,]
+# Function to impute missing values of earnings based on the observed data for this variable
+random.imp <- function (a){
+missing <- is.na(a)
+n.missing <- sum(missing)
+a.obs <- a[!missing]
+imputed <- a
+imputed[missing] <- sample (a.obs, n.missing, replace=TRUE)
+return (imputed)
+}
+#Function to top code the earnings to $100,000
+#topcoding reduces the sensitivity of the results to the highest values, which
+#in this survey go up to the millions.
+topcode <- function (a, top){
+return (ifelse (a>top, top, a))
+}
+earnings.imp <- random.imp (earnings) #IMPUTE
+earnings.top <- topcode (earnings, 100) # earnings are in $thousands
+#Plot histogram of earnings vs Observerd
+hist (earnings.top[earnings>0], xlab = "earnings", main = "Observed earnings (excluding 0’s)")
+#calculate each variable
+white <- ifelse (race==1, 1, 0)
+white[is.na(race)] <- 0
+male <- ifelse (sex==1, 1, 0)
+over65 <- ifelse (r_age>65, 1, 0)
+immig[is.na(immig)] <- 0
+educ_r[is.na(educ_r)] <- 2.5
+workhrs.top <- topcode (workhrs, 40)
+#Function to calculate abs value
+is.any <- function (a) {
+any.a <- ifelse (a>0, 1, 0)
+any.a[is.na(a)] <- 0
+return(any.a)
+}
+workmos <- workmos
+earnings[workmos==0] <- 0
+any.ssi <- is.any (ssi)
+any.welfare <- is.any (welfare)
+any.charity <- is.any (charity)
+#Create Data fram of above variables.
+sis <- data.frame (cbind (earnings, earnings.top, male, over65, white,immig, educ_r, workmos, workhrs.top, any.ssi, any.welfare, any.charity))
+#fit a regression to positive values of earnings
+lm.imp.1 <- lm (earnings ~ male + over65 + white + immig + educ_r + workmos + workhrs.top + any.ssi + any.welfare + any.charity,data=sis, subset=earnings>0)
+pred.1 <- predict (lm.imp.1, sis)
+#Function to impute predicted values into missing values.
+impute <- function (a, a.impute){
+ifelse (is.na(a), a.impute, a)
+}
+#compute missing earnings
+earnings.imp.1 <- impute (earnings, pred.1)
+View(earnings.imp.1)
+lm.imp.2.sqrt <- lm (I(sqrt(earnings.top)) ~ male + over65 + white + immig + educ_r + workmos + workhrs.top + any.ssi + any.welfare + any.charity, data=sis, subset=earnings>0)
+pred.2.sqrt <- predict (lm.imp.2.sqrt, sis)
+pred.2 <- topcode (pred.2.sqrt^2, 100)
+earnings.imp.2 <- impute (earnings.top, pred.2)
+lm.imp.2.sqrt <- lm (I(sqrt(earnings.top)) ~ male + over65 + white + immig + educ_r + workmos + workhrs.top + any.ssi + any.welfare + any.charity, data=sis, subset=earnings>0)
+pred.2.sqrt <- predict (lm.imp.2.sqrt, sis)
+pred.2 <- topcode (pred.2.sqrt^2, 100)
+earnings.imp.2 <- impute (earnings.top, pred.2)
+hist (earnings.imp.2[is.na(earnings)])
+summary(lm.imp.2.sqrt)
+Call:
+lm(formula = I(sqrt(earnings.top)) ~ male + over65 + white +
+immig + educ_r + workmos + workhrs.top + any.ssi + any.welfare +
+any.charity, data = sis, subset = earnings > 0)
+summary(lm.imp.2.sqrt)
+lm(formula = I(sqrt(earnings.top)) ~ male + over65 + white +
+immig + educ_r + workmos + workhrs.top + any.ssi + any.welfare +
+any.charity, data = sis, subset = earnings > 0)
+summary(lm.imp.2.sqrt)
+hist (earnings.imp.2[is.na(earnings)],xlab = "earnings", main = "Deterministic imputation ofearnings")
+plot(rearn, race, main="Scatterplot Example",xlab="Car Weight ", ylab="Miles Per Gallon ", pch=19)
+plot(full_data)
+plot(rearn, sex)
+plot(rearn, age)
+hist (earnings.top[earnings>0], xlab = "earnings", main = "Observed earnings (excluding 0’s)")
